@@ -14,6 +14,7 @@
 
 (defun publish-examples ()
   "Publish the org-mode examples."
+  (setq org-html-postamble nil)
   (setq org-publish-project-alist
         '(("examples"
            :base-directory "."
