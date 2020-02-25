@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-25 Tue 15:46 -->
+<!-- 2020-02-25 Tue 15:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Org ad hoc code, quick hacks and workarounds</title>
@@ -180,15 +180,15 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="./css/gruvbox-dark-medium.css"/>
+<link rel="stylesheet" type="text/css" href="http://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.min.css"/>
 
-<script type="text/javascript" src="./org-info.min.js">
+<script type="text/javascript" src="http://a-dma.github.io/gruvbox-css/org-info.min.js">
 /**
  *
- * @source: ./org-info.min.js
+ * @source: http://a-dma.github.io/gruvbox-css/org-info.min.js
  *
  * @licstart  The following is the entire license notice for the
- *  JavaScript code in ./org-info.min.js.
+ *  JavaScript code in http://a-dma.github.io/gruvbox-css/org-info.min.js.
  *
  * Copyright (C) 2012-2019 Free Software Foundation, Inc.
  *
@@ -208,7 +208,7 @@
  * through which recipients can access the Corresponding Source.
  *
  * @licend  The above is the entire license notice
- * for the JavaScript code in ./org-info.min.js.
+ * for the JavaScript code in http://a-dma.github.io/gruvbox-css/org-info.min.js.
  *
  */
 </script>
@@ -307,161 +307,161 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdfe4889">Hacking Org: Working within Org-mode.</a>
+<li><a href="#orgba75f12">Hacking Org: Working within Org-mode.</a>
 <ul>
-<li><a href="#org87e828e">Org Agenda</a>
+<li><a href="#orge9ca162">Org Agenda</a>
 <ul>
-<li><a href="#orgbb02947">Colorize clocking tasks with a block</a></li>
-<li><a href="#org015664a">Picking up a random task in the global TODO list</a></li>
+<li><a href="#org96fec8b">Colorize clocking tasks with a block</a></li>
+<li><a href="#orgccf80b3">Picking up a random task in the global TODO list</a></li>
 </ul>
 </li>
-<li><a href="#orgbc35e77">Building and Managing Org</a>
+<li><a href="#orgf796a5f">Building and Managing Org</a>
 <ul>
 <li><a href="#compiling-org-without-make">Generating autoloads and Compiling Org without make</a></li>
-<li><a href="#orgdda4d22">Reload Org</a></li>
+<li><a href="#orgc6cc3f7">Reload Org</a></li>
 <li><a href="#check-old-link-escapes">Check for possibly problematic old link escapes</a></li>
 </ul>
 </li>
-<li><a href="#org8da4a43">Structure Movement and Editing</a>
+<li><a href="#orgcd8f76a">Structure Movement and Editing</a>
 <ul>
-<li><a href="#orgafb50cc">Go back to the previous top-level heading</a></li>
+<li><a href="#org3f47156">Go back to the previous top-level heading</a></li>
 <li><a href="#org-jump-to-child">Go to a child of the current heading</a></li>
 <li><a href="#org-jump-to-id">Go to a heading by its ID (<code>CUSTOM_ID</code> property)</a></li>
-<li><a href="#org87de820">Show next/prev heading tidily</a></li>
-<li><a href="#org4b75e2b">Promote all items in subtree</a></li>
+<li><a href="#orgeb83375">Show next/prev heading tidily</a></li>
+<li><a href="#org9febc68">Promote all items in subtree</a></li>
 <li><a href="#heading-to-link">Turn a heading into an Org link</a></li>
-<li><a href="#org7c93154">Using M-up and M-down to transpose paragraphs</a></li>
-<li><a href="#org99e44d3">Changelog support for org headers</a></li>
-<li><a href="#orgd939069">Different org-cycle-level behavior</a></li>
-<li><a href="#orgbeee332">Count words in an Org buffer</a></li>
-<li><a href="#org3548fe4">Check for misplaced SCHEDULED and DEADLINE cookies</a></li>
-<li><a href="#orgd09b5b7">Sorting list by checkbox type</a></li>
-<li><a href="#orgf080a60">Adding Licenses to org files</a></li>
+<li><a href="#org71c6f19">Using M-up and M-down to transpose paragraphs</a></li>
+<li><a href="#org88c3e87">Changelog support for org headers</a></li>
+<li><a href="#org65f6347">Different org-cycle-level behavior</a></li>
+<li><a href="#org1d454f2">Count words in an Org buffer</a></li>
+<li><a href="#orgb4cd605">Check for misplaced SCHEDULED and DEADLINE cookies</a></li>
+<li><a href="#orgec0503c">Sorting list by checkbox type</a></li>
+<li><a href="#org0c4ae0d">Adding Licenses to org files</a></li>
 </ul>
 </li>
 <li><a href="#Tables">Org Table</a>
 <ul>
-<li><a href="#orgdbff2e4">Align all tables in a file</a></li>
+<li><a href="#org3ece6fa">Align all tables in a file</a></li>
 <li><a href="#transpose-table">Transpose table</a></li>
-<li><a href="#orgfc56e22">Manipulate hours/minutes/seconds in table formulas</a></li>
-<li><a href="#org8bcaf26">Dates computation</a></li>
-<li><a href="#org97ad6cc">Hex computation</a></li>
+<li><a href="#org74cfc5f">Manipulate hours/minutes/seconds in table formulas</a></li>
+<li><a href="#org55cc153">Dates computation</a></li>
+<li><a href="#orgb1cca14">Hex computation</a></li>
 <li><a href="#field-coordinates-in-formulas">Field coordinates in formulas (<code>@#</code> and <code>$#</code>)</a></li>
 <li><a href="#field-same-row-or-column">Rearrange one or more field within the same row or column</a></li>
 </ul>
 </li>
-<li><a href="#org9b416b1">Capture and Remember</a>
+<li><a href="#orge6e8e13">Capture and Remember</a>
 <ul>
-<li><a href="#org9c02835">Customize the size of the frame for remember</a></li>
-<li><a href="#orgc901f49">User-defined capture template variables with prompt and completion list</a></li>
-<li><a href="#org1ec12c5">Ensure blank lines between headings and before contents</a></li>
+<li><a href="#org41a4621">Customize the size of the frame for remember</a></li>
+<li><a href="#org49dce44">User-defined capture template variables with prompt and completion list</a></li>
+<li><a href="#orgf5c307b">Ensure blank lines between headings and before contents</a></li>
 </ul>
 </li>
-<li><a href="#orgc7a8cb2">Handling Links</a>
+<li><a href="#org47ed1af">Handling Links</a>
 <ul>
-<li><a href="#orgdbd9c96">Turn a heading into an org link</a></li>
-<li><a href="#org485a439">Quickaccess to the link part of hyperlinks</a></li>
-<li><a href="#orge1cd625">Insert link with HTML title as default description</a></li>
+<li><a href="#org5f793df">Turn a heading into an org link</a></li>
+<li><a href="#org32b9429">Quickaccess to the link part of hyperlinks</a></li>
+<li><a href="#orgd810367">Insert link with HTML title as default description</a></li>
 </ul>
 </li>
-<li><a href="#orgda6667c">Archiving Content in Org-Mode</a>
+<li><a href="#org7e0711e">Archiving Content in Org-Mode</a>
 <ul>
-<li><a href="#org92aaf2c">Preserve top level headings when archiving to a file</a></li>
-<li><a href="#orgf344340">Archive in a date tree</a></li>
-<li><a href="#orgdb14aea">Add inherited tags to archived entries</a></li>
+<li><a href="#org4441314">Preserve top level headings when archiving to a file</a></li>
+<li><a href="#orge93a9b5">Archive in a date tree</a></li>
+<li><a href="#org58fb96e">Add inherited tags to archived entries</a></li>
 </ul>
 </li>
-<li><a href="#orge4a447f">Using and Managing Org-Metadata</a>
+<li><a href="#orgf77476a">Using and Managing Org-Metadata</a>
 <ul>
-<li><a href="#org9c86ea1">Remove redundant tags of headlines</a></li>
-<li><a href="#org19682c2">Remove empty property drawers</a></li>
-<li><a href="#orgccdc418">Group task list by a property</a></li>
-<li><a href="#org8acf931">A way to tag a task so that when clocking-out user is prompted to take a note.</a></li>
-<li><a href="#orgc4c4ce1">Dynamically adjust tag position</a></li>
-<li><a href="#org601aefe">Use an "attach" link type to open files without worrying about their location</a></li>
+<li><a href="#org625ebb1">Remove redundant tags of headlines</a></li>
+<li><a href="#orga6ceb53">Remove empty property drawers</a></li>
+<li><a href="#org3d607ab">Group task list by a property</a></li>
+<li><a href="#org8c905a2">A way to tag a task so that when clocking-out user is prompted to take a note.</a></li>
+<li><a href="#org854655c">Dynamically adjust tag position</a></li>
+<li><a href="#orge440ff9">Use an "attach" link type to open files without worrying about their location</a></li>
 </ul>
 </li>
-<li><a href="#orgf687826">Org Agenda and Task Management</a>
+<li><a href="#orgd0a2b11">Org Agenda and Task Management</a>
 <ul>
-<li><a href="#org8dc4f79">Make it easier to set org-agenda-files from multiple directories</a></li>
+<li><a href="#org3b16bba">Make it easier to set org-agenda-files from multiple directories</a></li>
 <li><a href="#set-agenda-files-by-filetag">Restrict org-agenda-files by filetag</a></li>
-<li><a href="#orga1c36bb">Highlight the agenda line under cursor</a></li>
-<li><a href="#org4982e36">Split frame horizontally for agenda</a></li>
-<li><a href="#orgaba70be">Automatically add an appointment when clocking in a task</a></li>
-<li><a href="#orgb96ce72">Using external programs for appointments reminders</a></li>
-<li><a href="#org9e792bd">Remove from agenda time grid lines that are in an appointment</a></li>
-<li><a href="#org6bb1ee7">Disable version control for Org mode agenda files</a></li>
-<li><a href="#org9ddf30a">Easy customization of TODO colors</a></li>
-<li><a href="#org1cc5e42">Add an effort estimate on the fly when clocking in</a></li>
-<li><a href="#org6897e3d">Use idle timer for automatic agenda views</a></li>
-<li><a href="#org528f793">Refresh the agenda view regularly</a></li>
-<li><a href="#org19dffc2">Reschedule agenda items to today with a single command</a></li>
-<li><a href="#orgb41cd02">Mark subtree DONE along with all subheadings</a></li>
+<li><a href="#org6b5c267">Highlight the agenda line under cursor</a></li>
+<li><a href="#org27e6cb4">Split frame horizontally for agenda</a></li>
+<li><a href="#org620196d">Automatically add an appointment when clocking in a task</a></li>
+<li><a href="#org7d3fa77">Using external programs for appointments reminders</a></li>
+<li><a href="#org5428ce8">Remove from agenda time grid lines that are in an appointment</a></li>
+<li><a href="#org446fa7a">Disable version control for Org mode agenda files</a></li>
+<li><a href="#orgaded7d3">Easy customization of TODO colors</a></li>
+<li><a href="#org9244a3f">Add an effort estimate on the fly when clocking in</a></li>
+<li><a href="#org46c6009">Use idle timer for automatic agenda views</a></li>
+<li><a href="#org173f417">Refresh the agenda view regularly</a></li>
+<li><a href="#org787f187">Reschedule agenda items to today with a single command</a></li>
+<li><a href="#org1cf591b">Mark subtree DONE along with all subheadings</a></li>
 <li><a href="#mark-done-when-all-checkboxes-checked">Mark heading done when all checkboxes are checked.</a></li>
 <li><a href="#links-to-agenda-views">Links to custom agenda views</a></li>
 </ul>
 </li>
-<li><a href="#org9463975">Exporting org files</a>
+<li><a href="#orgcb0b8ef">Exporting org files</a>
 <ul>
 <li><a href="#ignoreheadline">Ignoring headlines during export</a></li>
-<li><a href="#orga3f7b95">Export Org to Org and handle includes.</a></li>
+<li><a href="#org2f3cf71">Export Org to Org and handle includes.</a></li>
 <li><a href="#latex-command-for-floats">Specifying LaTeX commands to floating environments</a></li>
-<li><a href="#org2208072">Styling code sections with CSS</a></li>
-<li><a href="#orge6ab5a9">Where can I find nice themes for HTML export?</a></li>
-<li><a href="#orgfc1cf94">Including external text fragments</a></li>
+<li><a href="#orgcb58082">Styling code sections with CSS</a></li>
+<li><a href="#orgca0687e">Where can I find nice themes for HTML export?</a></li>
+<li><a href="#orge151c7c">Including external text fragments</a></li>
 </ul>
 </li>
-<li><a href="#org5bca6ba">Babel</a>
+<li><a href="#orgcc47029">Babel</a>
 <ul>
-<li><a href="#orgac38280">How do I preview LaTeX fragments when in a LaTeX source block?</a></li>
+<li><a href="#orgaf8af3b">How do I preview LaTeX fragments when in a LaTeX source block?</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org6f69bd6">Hacking Org: Working with Org-mode and other Emacs Packages.</a>
+<li><a href="#orgffaf628">Hacking Org: Working with Org-mode and other Emacs Packages.</a>
 <ul>
-<li><a href="#orga7d6c3f">How to ediff folded Org files</a></li>
-<li><a href="#orgd0113f1">org-remember-anything</a></li>
-<li><a href="#orgf455ae6">Org-mode and saveplace.el</a></li>
-<li><a href="#org90782e5">Using ido-mode for org-refile (and archiving via refile)</a></li>
-<li><a href="#org77bc169">Using ido-completing-read to find attachments</a></li>
-<li><a href="#org2a9240e">Link to Gnus messages by Message-Id</a></li>
-<li><a href="#orgd682412">Store link to a message when sending in Gnus</a></li>
-<li><a href="#org917ec11">Link to visit a file and run occur</a></li>
-<li><a href="#orgc6682e4">Send html messages and attachments with Wanderlust</a>
+<li><a href="#org8a96639">How to ediff folded Org files</a></li>
+<li><a href="#org5761da1">org-remember-anything</a></li>
+<li><a href="#orgba9e3c0">Org-mode and saveplace.el</a></li>
+<li><a href="#org3c09ef1">Using ido-mode for org-refile (and archiving via refile)</a></li>
+<li><a href="#org3a53b12">Using ido-completing-read to find attachments</a></li>
+<li><a href="#orgfd16c69">Link to Gnus messages by Message-Id</a></li>
+<li><a href="#orgca1a73d">Store link to a message when sending in Gnus</a></li>
+<li><a href="#orged93d46">Link to visit a file and run occur</a></li>
+<li><a href="#org0f111bd">Send html messages and attachments with Wanderlust</a>
 <ul>
-<li><a href="#orgd1a1516">Send HTML message</a></li>
-<li><a href="#org55e4bf0">Attach HTML of region or subtree</a></li>
-<li><a href="#org2705d79">Adopting for Gnus</a></li>
+<li><a href="#org2575e28">Send HTML message</a></li>
+<li><a href="#org7b2837b">Attach HTML of region or subtree</a></li>
+<li><a href="#org5343b31">Adopting for Gnus</a></li>
 </ul>
 </li>
-<li><a href="#orgcc11533">Add sunrise/sunset times to the agenda.</a></li>
-<li><a href="#org23bb736">Add lunar phases to the agenda.</a></li>
-<li><a href="#orgdc9843d">Export BBDB contacts to org-contacts.el</a></li>
-<li><a href="#org6966fdb">Calculating date differences - how to write a simple elisp function</a></li>
-<li><a href="#org8c5ac59">ibuffer and org files</a></li>
-<li><a href="#orga236994">Enable org-mode links in other modes</a></li>
-<li><a href="#org2b0dc9d">poporg.el: edit comments in org-mode</a></li>
-<li><a href="#org8b5cc3e">Convert a .csv file to an Org-mode table</a></li>
-<li><a href="#org2d1f714">foldout.el</a></li>
+<li><a href="#org032b3e4">Add sunrise/sunset times to the agenda.</a></li>
+<li><a href="#org38cf893">Add lunar phases to the agenda.</a></li>
+<li><a href="#org4b0799d">Export BBDB contacts to org-contacts.el</a></li>
+<li><a href="#org807e1a6">Calculating date differences - how to write a simple elisp function</a></li>
+<li><a href="#org24bad50">ibuffer and org files</a></li>
+<li><a href="#org47cb43e">Enable org-mode links in other modes</a></li>
+<li><a href="#org7b4e986">poporg.el: edit comments in org-mode</a></li>
+<li><a href="#org0c5a86b">Convert a .csv file to an Org-mode table</a></li>
+<li><a href="#org963bab8">foldout.el</a></li>
 </ul>
 </li>
-<li><a href="#orgecb4ace">Hacking Org: Working with Org-mode and External Programs.</a>
+<li><a href="#orgf33e1de">Hacking Org: Working with Org-mode and External Programs.</a>
 <ul>
-<li><a href="#org246ca8a">Use Org-mode with Screen [Andrew Hyatt]</a></li>
+<li><a href="#orgd955fdd">Use Org-mode with Screen [Andrew Hyatt]</a></li>
 <li><a href="#org-agenda-appt-zenity">Org Agenda + Appt + Zenity</a></li>
-<li><a href="#org6f9c6c7">Org and appointment notifications on Mac OS 10.8</a></li>
-<li><a href="#org1a39638">Org-Mode + gnome-osd</a></li>
-<li><a href="#orgda3764c">txt2org convert text data to org-mode tables</a></li>
-<li><a href="#org902a247">remind2org</a></li>
-<li><a href="#orgf7546dc">Useful webjumps for conkeror</a></li>
-<li><a href="#orgd2bb5a9">Use MathJax for HTML export without requiring JavaScript</a></li>
-<li><a href="#orga6b776c">Search Org files using lgrep</a></li>
-<li><a href="#org5182a6b">Automatic screenshot insertion</a></li>
-<li><a href="#org36b4bfa">Capture invitations/appointments from MS Exchange emails</a></li>
-<li><a href="#org9252f91">Audio/video file playback within org mode</a></li>
-<li><a href="#orgb965297">Under X11 Keep a window with the current agenda items at all time</a></li>
-<li><a href="#org4af2269">Script (thru procmail) to output emails to an Org file</a></li>
+<li><a href="#orgd443426">Org and appointment notifications on Mac OS 10.8</a></li>
+<li><a href="#org0111621">Org-Mode + gnome-osd</a></li>
+<li><a href="#org55a82be">txt2org convert text data to org-mode tables</a></li>
+<li><a href="#org4013df4">remind2org</a></li>
+<li><a href="#org33859a8">Useful webjumps for conkeror</a></li>
+<li><a href="#orgdc32ae9">Use MathJax for HTML export without requiring JavaScript</a></li>
+<li><a href="#orgd38626d">Search Org files using lgrep</a></li>
+<li><a href="#orge383213">Automatic screenshot insertion</a></li>
+<li><a href="#orgcfe85c9">Capture invitations/appointments from MS Exchange emails</a></li>
+<li><a href="#orgc315bd9">Audio/video file playback within org mode</a></li>
+<li><a href="#org234680c">Under X11 Keep a window with the current agenda items at all time</a></li>
+<li><a href="#org6a7a037">Script (thru procmail) to output emails to an Org file</a></li>
 <li><a href="#fileconversion">Save File With Different Format for Headings (fileconversion)</a>
 <ul>
 <li><a href="#hidestarsfile">Headings Without Leading Stars (hidestarsfile and nbspstarsfile)</a></li>
@@ -469,14 +469,14 @@ for the JavaScript code in this tag.
 <li><a href="#fileconversion-code">emacs-lisp code</a></li>
 </ul>
 </li>
-<li><a href="#orge07f23d">Meaningful diff for org files in a git repository</a></li>
-<li><a href="#orgd071f74">Opening devonthink links</a></li>
-<li><a href="#org8e843fd">Memacs - Org-mode collecting meta-data from the disk and cloud</a></li>
+<li><a href="#org9117bc5">Meaningful diff for org files in a git repository</a></li>
+<li><a href="#orgec1edbb">Opening devonthink links</a></li>
+<li><a href="#org23cfd88">Memacs - Org-mode collecting meta-data from the disk and cloud</a></li>
 </ul>
 </li>
-<li><a href="#orgb4029a5">Musings</a>
+<li><a href="#org0bb0f2d">Musings</a>
 <ul>
-<li><a href="#orgeca7488">Cooking?  Brewing?</a></li>
+<li><a href="#orgab0c7f5">Cooking?  Brewing?</a></li>
 </ul>
 </li>
 </ul>
@@ -491,17 +491,17 @@ This page is for ad hoc bits of code. Feel free to add quick hacks and
 workaround. Go crazy.
 </p>
 
-<div id="outline-container-orgdfe4889" class="outline-2">
-<h2 id="orgdfe4889">Hacking Org: Working within Org-mode.</h2>
-<div class="outline-text-2" id="text-orgdfe4889">
+<div id="outline-container-orgba75f12" class="outline-2">
+<h2 id="orgba75f12">Hacking Org: Working within Org-mode.</h2>
+<div class="outline-text-2" id="text-orgba75f12">
 </div>
-<div id="outline-container-org87e828e" class="outline-3">
-<h3 id="org87e828e">Org Agenda</h3>
-<div class="outline-text-3" id="text-org87e828e">
+<div id="outline-container-orge9ca162" class="outline-3">
+<h3 id="orge9ca162">Org Agenda</h3>
+<div class="outline-text-3" id="text-orge9ca162">
 </div>
-<div id="outline-container-orgbb02947" class="outline-4">
-<h4 id="orgbb02947">Colorize clocking tasks with a block</h4>
-<div class="outline-text-4" id="text-orgbb02947">
+<div id="outline-container-org96fec8b" class="outline-4">
+<h4 id="org96fec8b">Colorize clocking tasks with a block</h4>
+<div class="outline-text-4" id="text-org96fec8b">
 <p>
 Show Org Agenda tasks with heigh spacing based on clock time with <code>org-agenda-log-mode</code>.
 </p>
@@ -552,9 +552,9 @@ Here is a hook function to use archive this effect:
 </div>
 </div>
 
-<div id="outline-container-org015664a" class="outline-4">
-<h4 id="org015664a">Picking up a random task in the global TODO list</h4>
-<div class="outline-text-4" id="text-org015664a">
+<div id="outline-container-orgccf80b3" class="outline-4">
+<h4 id="orgccf80b3">Picking up a random task in the global TODO list</h4>
+<div class="outline-text-4" id="text-orgccf80b3">
 <p>
 Tony day <a href="http://mid.gmane.org/m2zk19l1me.fsf@gmail.com">shared</a> <a href="https://gist.github.com/4343164">this gist</a> to pick up a
 random task.
@@ -563,12 +563,12 @@ random task.
 </div>
 </div>
 
-<div id="outline-container-orgbc35e77" class="outline-3">
-<h3 id="orgbc35e77">Building and Managing Org</h3>
-<div class="outline-text-3" id="text-orgbc35e77">
+<div id="outline-container-orgf796a5f" class="outline-3">
+<h3 id="orgf796a5f">Building and Managing Org</h3>
+<div class="outline-text-3" id="text-orgf796a5f">
 </div>
-<div id="outline-container-org9f0afc8" class="outline-4">
-<h4 id="compiling-org-without-make"><a id="org9f0afc8"></a>Generating autoloads and Compiling Org without make</h4>
+<div id="outline-container-org05ac20b" class="outline-4">
+<h4 id="compiling-org-without-make"><a id="org05ac20b"></a>Generating autoloads and Compiling Org without make</h4>
 <div class="outline-text-4" id="text-compiling-org-without-make">
 <p>
 Compilation is optional, but you <span class="underline">must</span> update the autoloads file
@@ -685,9 +685,9 @@ all <code>*.elc</code> files in the <code>lisp/</code> directory, set
 </div>
 </div>
 </div>
-<div id="outline-container-orgdda4d22" class="outline-4">
-<h4 id="orgdda4d22">Reload Org</h4>
-<div class="outline-text-4" id="text-orgdda4d22">
+<div id="outline-container-orgc6cc3f7" class="outline-4">
+<h4 id="orgc6cc3f7">Reload Org</h4>
+<div class="outline-text-4" id="text-orgc6cc3f7">
 <p>
 As of Org version 6.23b (released Sunday Feb 22, 2009) there is a new
 function to reload org files.
@@ -726,8 +726,8 @@ M-x org-reload
 </div>
 </div>
 
-<div id="outline-container-org511d42a" class="outline-4">
-<h4 id="check-old-link-escapes"><a id="org511d42a"></a>Check for possibly problematic old link escapes</h4>
+<div id="outline-container-orga6cb420" class="outline-4">
+<h4 id="check-old-link-escapes"><a id="orga6cb420"></a>Check for possibly problematic old link escapes</h4>
 <div class="outline-text-4" id="text-check-old-link-escapes">
 <p>
 Starting with version 7.5 Org uses <a href="https://en.wikipedia.org/wiki/Percent-encoding">percent escaping</a> more consistently
@@ -777,13 +777,13 @@ in old Org's list of known percent escapes.
 </div>
 </div>
 
-<div id="outline-container-org8da4a43" class="outline-3">
-<h3 id="org8da4a43">Structure Movement and Editing</h3>
-<div class="outline-text-3" id="text-org8da4a43">
+<div id="outline-container-orgcd8f76a" class="outline-3">
+<h3 id="orgcd8f76a">Structure Movement and Editing</h3>
+<div class="outline-text-3" id="text-orgcd8f76a">
 </div>
-<div id="outline-container-orgafb50cc" class="outline-4">
-<h4 id="orgafb50cc">Go back to the previous top-level heading</h4>
-<div class="outline-text-4" id="text-orgafb50cc">
+<div id="outline-container-org3f47156" class="outline-4">
+<h4 id="org3f47156">Go back to the previous top-level heading</h4>
+<div class="outline-text-4" id="text-org3f47156">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">org-back-to-top-level-heading</span> ()
   <span style="font-style: italic;">"Go back to the current top level heading."</span>
@@ -795,15 +795,15 @@ in old Org's list of known percent escapes.
 </div>
 </div>
 
-<div id="outline-container-org22ca7a1" class="outline-4">
-<h4 id="org-jump-to-child"><a id="org22ca7a1"></a>Go to a child of the current heading</h4>
+<div id="outline-container-org8b8b6ac" class="outline-4">
+<h4 id="org-jump-to-child"><a id="org8b8b6ac"></a>Go to a child of the current heading</h4>
 <div class="outline-text-4" id="text-org-jump-to-child">
 <ul class="org-ul">
 <li><a href="http://langec.wordpress.com">Christoph Lange</a></li>
 </ul>
 
 <p>
-<code>org-jump-to-child</code> in <a href="code/elisp/org-jump.el#org29f0172">org-jump.el</a> (keybinding suggested there: <code>C-c o c</code>) interactively prompts for the title of a child node, i.e. sub-heading, of the current heading and jumps to the child node having that title (in case of ambiguity: the <i>last</i> such node).
+<code>org-jump-to-child</code> in <a href="code/elisp/org-jump.el#orgabd5c1c">org-jump.el</a> (keybinding suggested there: <code>C-c o c</code>) interactively prompts for the title of a child node, i.e. sub-heading, of the current heading and jumps to the child node having that title (in case of ambiguity: the <i>last</i> such node).
 </p>
 
 <p>
@@ -812,15 +812,15 @@ In the absence of a readily accessible structural representation of the tree out
 </div>
 </div>
 
-<div id="outline-container-orgdb5884b" class="outline-4">
-<h4 id="org-jump-to-id"><a id="orgdb5884b"></a>Go to a heading by its ID (<code>CUSTOM_ID</code> property)</h4>
+<div id="outline-container-orgc2ba9b7" class="outline-4">
+<h4 id="org-jump-to-id"><a id="orgc2ba9b7"></a>Go to a heading by its ID (<code>CUSTOM_ID</code> property)</h4>
 <div class="outline-text-4" id="text-org-jump-to-id">
 <ul class="org-ul">
 <li><a href="http://langec.wordpress.com">Christoph Lange</a></li>
 </ul>
 
 <p>
-<code>org-jump-to-id</code> in <a href="code/elisp/org-jump.el#orgee66862">org-jump.el</a> (keybinding suggested there: <code>C-c o j</code>) interactively prompts for the one of the <code>CUSTOM_ID</code> property values in the current document and jumps to the [first] node that has this ID.
+<code>org-jump-to-id</code> in <a href="code/elisp/org-jump.el#orgdfdf48b">org-jump.el</a> (keybinding suggested there: <code>C-c o j</code>) interactively prompts for the one of the <code>CUSTOM_ID</code> property values in the current document and jumps to the [first] node that has this ID.
 </p>
 
 <p>
@@ -832,9 +832,9 @@ I noticed that <code>org-babel-ref-goto-headline-id</code> does something simila
 </p>
 </div>
 </div>
-<div id="outline-container-org87de820" class="outline-4">
-<h4 id="org87de820">Show next/prev heading tidily</h4>
-<div class="outline-text-4" id="text-org87de820">
+<div id="outline-container-orgeb83375" class="outline-4">
+<h4 id="orgeb83375">Show next/prev heading tidily</h4>
+<div class="outline-text-4" id="text-orgeb83375">
 <ul class="org-ul">
 <li>Dan Davison
 These close the current heading and open the next/previous heading.</li>
@@ -878,9 +878,9 @@ These close the current heading and open the next/previous heading.</li>
 </div>
 </div>
 
-<div id="outline-container-org4b75e2b" class="outline-4">
-<h4 id="org4b75e2b">Promote all items in subtree</h4>
-<div class="outline-text-4" id="text-org4b75e2b">
+<div id="outline-container-org9febc68" class="outline-4">
+<h4 id="org9febc68">Promote all items in subtree</h4>
+<div class="outline-text-4" id="text-org9febc68">
 <ul class="org-ul">
 <li>Matt Lundin</li>
 </ul>
@@ -901,8 +901,8 @@ unimaginatively called my-org-un-project:
 </div>
 </div>
 
-<div id="outline-container-orgca8ecf3" class="outline-4">
-<h4 id="heading-to-link"><a id="orgca8ecf3"></a>Turn a heading into an Org link</h4>
+<div id="outline-container-org19af7e2" class="outline-4">
+<h4 id="heading-to-link"><a id="org19af7e2"></a>Turn a heading into an Org link</h4>
 <div class="outline-text-4" id="text-heading-to-link">
 <p>
 From David Maus:
@@ -929,9 +929,9 @@ From David Maus:
 </div>
 </div>
 
-<div id="outline-container-org7c93154" class="outline-4">
-<h4 id="org7c93154">Using M-up and M-down to transpose paragraphs</h4>
-<div class="outline-text-4" id="text-org7c93154">
+<div id="outline-container-org71c6f19" class="outline-4">
+<h4 id="org71c6f19">Using M-up and M-down to transpose paragraphs</h4>
+<div class="outline-text-4" id="text-org71c6f19">
 <p>
 From Paul Sexton: By default, if used within ordinary paragraphs in
 org mode, <code>M-up</code> and <code>M-down</code> transpose <b>lines</b> (not sentences).  The
@@ -960,9 +960,9 @@ sentences.
 </div>
 </div>
 </div>
-<div id="outline-container-org99e44d3" class="outline-4">
-<h4 id="org99e44d3">Changelog support for org headers</h4>
-<div class="outline-text-4" id="text-org99e44d3">
+<div id="outline-container-org88c3e87" class="outline-4">
+<h4 id="org88c3e87">Changelog support for org headers</h4>
+<div class="outline-text-4" id="text-org88c3e87">
 <p>
 &#x2013; James TD Smith
 </p>
@@ -990,9 +990,9 @@ buffer.
 </div>
 </div>
 
-<div id="outline-container-orgd939069" class="outline-4">
-<h4 id="orgd939069">Different org-cycle-level behavior</h4>
-<div class="outline-text-4" id="text-orgd939069">
+<div id="outline-container-org65f6347" class="outline-4">
+<h4 id="org65f6347">Different org-cycle-level behavior</h4>
+<div class="outline-text-4" id="text-org65f6347">
 <p>
 &#x2013; Ryan Thompson
 </p>
@@ -1101,9 +1101,9 @@ This makes it more predictable, I hope.
 </div>
 </div>
 
-<div id="outline-container-orgbeee332" class="outline-4">
-<h4 id="orgbeee332">Count words in an Org buffer</h4>
-<div class="outline-text-4" id="text-orgbeee332">
+<div id="outline-container-org1d454f2" class="outline-4">
+<h4 id="org1d454f2">Count words in an Org buffer</h4>
+<div class="outline-text-4" id="text-org1d454f2">
 <p>
 Paul Sexton <a href="http://article.gmane.org/gmane.emacs.orgmode/38014">posted</a> this function to count words in an Org buffer:
 </p>
@@ -1200,9 +1200,9 @@ Paul Sexton <a href="http://article.gmane.org/gmane.emacs.orgmode/38014">posted<
 </div>
 </div>
 
-<div id="outline-container-org3548fe4" class="outline-4">
-<h4 id="org3548fe4">Check for misplaced SCHEDULED and DEADLINE cookies</h4>
-<div class="outline-text-4" id="text-org3548fe4">
+<div id="outline-container-orgb4cd605" class="outline-4">
+<h4 id="orgb4cd605">Check for misplaced SCHEDULED and DEADLINE cookies</h4>
+<div class="outline-text-4" id="text-orgb4cd605">
 <p>
 The <code>SCHEDULED</code> and <code>DEADLINE</code> cookies should be used on the line <b>right
 below</b> the headline &#x2013; like this:
@@ -1247,9 +1247,9 @@ If you think you might have subtrees with misplaced <code>SCHEDULED</code> and
 </div>
 </div>
 
-<div id="outline-container-orgd09b5b7" class="outline-4">
-<h4 id="orgd09b5b7">Sorting list by checkbox type</h4>
-<div class="outline-text-4" id="text-orgd09b5b7">
+<div id="outline-container-orgec0503c" class="outline-4">
+<h4 id="orgec0503c">Sorting list by checkbox type</h4>
+<div class="outline-text-4" id="text-orgec0503c">
 <p>
 You can use a custom function to sort list by checkbox type.
 Here is a function suggested by Carsten:
@@ -1286,9 +1286,9 @@ equivalent function after <code>C-c ^ f</code>, use this one instead:
 </div>
 </div>
 
-<div id="outline-container-orgf080a60" class="outline-4">
-<h4 id="orgf080a60">Adding Licenses to org files</h4>
-<div class="outline-text-4" id="text-orgf080a60">
+<div id="outline-container-org0c4ae0d" class="outline-4">
+<h4 id="org0c4ae0d">Adding Licenses to org files</h4>
+<div class="outline-text-4" id="text-org0c4ae0d">
 <p>
 You can add pretty standard licenses, such as creative commons or gfdl
 to org articles using <code>org-license.el</code>.
@@ -1297,14 +1297,14 @@ to org articles using <code>org-license.el</code>.
 </div>
 </div>
 
-<div id="outline-container-org782a916" class="outline-3">
-<h3 id="Tables"><a id="org782a916"></a>Org Table</h3>
+<div id="outline-container-org67f42c3" class="outline-3">
+<h3 id="Tables"><a id="org67f42c3"></a>Org Table</h3>
 <div class="outline-text-3" id="text-Tables">
 </div>
 
-<div id="outline-container-orgdbff2e4" class="outline-4">
-<h4 id="orgdbff2e4">Align all tables in a file</h4>
-<div class="outline-text-4" id="text-orgdbff2e4">
+<div id="outline-container-org3ece6fa" class="outline-4">
+<h4 id="org3ece6fa">Align all tables in a file</h4>
+<div class="outline-text-4" id="text-org3ece6fa">
 <p>
 Andrew Young provided this function in <a href="http://thread.gmane.org/gmane.emacs.orgmode/58974/focus=58976">this thread</a>:
 </p>
@@ -1318,8 +1318,8 @@ Andrew Young provided this function in <a href="http://thread.gmane.org/gmane.em
 </div>
 </div>
 
-<div id="outline-container-org7e23e67" class="outline-4">
-<h4 id="transpose-table"><a id="org7e23e67"></a>Transpose table</h4>
+<div id="outline-container-orga211f6a" class="outline-4">
+<h4 id="transpose-table"><a id="orga211f6a"></a>Transpose table</h4>
 <div class="outline-text-4" id="text-transpose-table">
 <p>
 Since Org 7.8, you can use <code>org-table-transpose-table-at-point</code> (which
@@ -1338,9 +1338,9 @@ list, see <a href="http://thread.gmane.org/gmane.emacs.orgmode/23809/focus=23815
 </div>
 </div>
 
-<div id="outline-container-orgfc56e22" class="outline-4">
-<h4 id="orgfc56e22">Manipulate hours/minutes/seconds in table formulas</h4>
-<div class="outline-text-4" id="text-orgfc56e22">
+<div id="outline-container-org74cfc5f" class="outline-4">
+<h4 id="org74cfc5f">Manipulate hours/minutes/seconds in table formulas</h4>
+<div class="outline-text-4" id="text-org74cfc5f">
 <p>
 Both Bastien and Martin Halder have posted code (<a href="http://article.gmane.org/gmane.emacs.orgmode/39519">Bastien's code</a> and
 <a href="http://article.gmane.org/gmane.emacs.orgmode/39519">Martin's code</a>) for interpreting <code>dd:dd</code> or <code>dd:dd:dd</code> strings (where
@@ -1438,9 +1438,9 @@ Elisp formulas) to compute time durations.  For example:
 </div>
 </div>
 
-<div id="outline-container-org8bcaf26" class="outline-4">
-<h4 id="org8bcaf26">Dates computation</h4>
-<div class="outline-text-4" id="text-org8bcaf26">
+<div id="outline-container-org55cc153" class="outline-4">
+<h4 id="org55cc153">Dates computation</h4>
+<div class="outline-text-4" id="text-org55cc153">
 <p>
 Xin Shi <a href="http://article.gmane.org/gmane.emacs.orgmode/15692">asked</a> for a way to calculate the duration of
 dates stored in an org table.
@@ -1470,9 +1470,9 @@ post</a> and Chris Randle's original musings are <a href="http://article.gmane.o
 </div>
 </div>
 
-<div id="outline-container-org97ad6cc" class="outline-4">
-<h4 id="org97ad6cc">Hex computation</h4>
-<div class="outline-text-4" id="text-org97ad6cc">
+<div id="outline-container-orgb1cca14" class="outline-4">
+<h4 id="orgb1cca14">Hex computation</h4>
+<div class="outline-text-4" id="text-orgb1cca14">
 <p>
 As with Times computation, the following code allows Computation with
 Hex values in Org-mode tables using the <code>with-hex</code> macro.
@@ -1571,8 +1571,8 @@ and subtracting hex values.
 </div>
 </div>
 
-<div id="outline-container-org32ddffa" class="outline-4">
-<h4 id="field-coordinates-in-formulas"><a id="org32ddffa"></a>Field coordinates in formulas (<code>@#</code> and <code>$#</code>)</h4>
+<div id="outline-container-org55a3eeb" class="outline-4">
+<h4 id="field-coordinates-in-formulas"><a id="org55a3eeb"></a>Field coordinates in formulas (<code>@#</code> and <code>$#</code>)</h4>
 <div class="outline-text-4" id="text-field-coordinates-in-formulas">
 <p>
 &#x2013; Michael Brand
@@ -1586,7 +1586,7 @@ coordinates in formulas” described in the corresponding chapter in the
 </div>
 
 <ul class="org-ul">
-<li><a id="field-coordinates-in-formulas-copy-col-to-col"></a><a id="org9b9a867"></a>Copy a column from a remote table into a column<br />
+<li><a id="field-coordinates-in-formulas-copy-col-to-col"></a><a id="org19e86d5"></a>Copy a column from a remote table into a column<br />
 <div class="outline-text-5" id="text-field-coordinates-in-formulas-copy-col-to-col">
 <p>
 current column <code>$3</code> = remote column <code>$2</code>:
@@ -1598,7 +1598,7 @@ current column <code>$3</code> = remote column <code>$2</code>:
 </div>
 </li>
 
-<li><a id="field-coordinates-in-formulas-copy-row-to-col"></a><a id="orgacff508"></a>Copy a row from a remote table transposed into a column<br />
+<li><a id="field-coordinates-in-formulas-copy-row-to-col"></a><a id="org609497b"></a>Copy a row from a remote table transposed into a column<br />
 <div class="outline-text-5" id="text-field-coordinates-in-formulas-copy-row-to-col">
 <p>
 current column <code>$1</code> = transposed remote row <code>@1</code>:
@@ -1610,7 +1610,7 @@ current column <code>$1</code> = transposed remote row <code>@1</code>:
 </div>
 </li>
 
-<li><a id="field-coordinates-in-formulas-transpose-table"></a><a id="orgf7e3b8c"></a>Transpose table<br />
+<li><a id="field-coordinates-in-formulas-transpose-table"></a><a id="orgce002e3"></a>Transpose table<br />
 <div class="outline-text-5" id="text-field-coordinates-in-formulas-transpose-table">
 <p>
 &#x2013; Michael Brand
@@ -1688,8 +1688,8 @@ manually.
 </div>
 </li>
 
-<li><a id="org4c95f04"></a>Dynamic variation of ranges<br />
-<div class="outline-text-5" id="text-org4c95f04">
+<li><a id="org85b1482"></a>Dynamic variation of ranges<br />
+<div class="outline-text-5" id="text-org85b1482">
 <p>
 &#x2013; Michael Brand
 </p>
@@ -1737,8 +1737,8 @@ where <i>i</i> is the current time and <i>a</i> is the length of the preceding p
 </ul>
 </div>
 
-<div id="outline-container-org4c20545" class="outline-4">
-<h4 id="field-same-row-or-column"><a id="org4c20545"></a>Rearrange one or more field within the same row or column</h4>
+<div id="outline-container-orgc6e23c0" class="outline-4">
+<h4 id="field-same-row-or-column"><a id="orgc6e23c0"></a>Rearrange one or more field within the same row or column</h4>
 <div class="outline-text-4" id="text-field-same-row-or-column">
 <p>
 &#x2013; Michael Brand
@@ -1746,7 +1746,7 @@ where <i>i</i> is the current time and <i>a</i> is the length of the preceding p
 </div>
 
 <ul class="org-ul">
-<li><a id="column-sequence-in-row"></a><a id="org54ce2b0"></a>Rearrange the column sequence in one row only<br />
+<li><a id="column-sequence-in-row"></a><a id="org6aa8662"></a>Rearrange the column sequence in one row only<br />
 <div class="outline-text-5" id="text-column-sequence-in-row">
 <p>
 The functions below can be used to change the column sequence in one
@@ -1765,10 +1765,10 @@ that serves as the starting point for the examples:
 </div>
 
 <ul class="org-ul">
-<li><a id="org52f5638"></a>Move current field in row<br />
+<li><a id="org19ea435"></a>Move current field in row<br />
 <ul class="org-ul">
-<li><a id="org2c033dc"></a>Left<br />
-<div class="outline-text-7" id="text-org2c033dc">
+<li><a id="org00484de"></a>Left<br />
+<div class="outline-text-7" id="text-org00484de">
 <ol class="org-ol">
 <li>place point at "10" in original table</li>
 <li><code>M-x f-org-table-move-field-in-row-left</code></li>
@@ -1784,8 +1784,8 @@ that serves as the starting point for the examples:
 </div>
 </li>
 
-<li><a id="org614b00a"></a>Right<br />
-<div class="outline-text-7" id="text-org614b00a">
+<li><a id="org4be9c04"></a>Right<br />
+<div class="outline-text-7" id="text-org4be9c04">
 <ol class="org-ol">
 <li>place point at "9" in original table</li>
 <li><code>M-x f-org-table-move-field-in-row-right</code></li>
@@ -1803,10 +1803,10 @@ that serves as the starting point for the examples:
 </ul>
 </li>
 
-<li><a id="orgf381234"></a>Rotate rest of row (range from current field to end of row)<br />
+<li><a id="org3637977"></a>Rotate rest of row (range from current field to end of row)<br />
 <ul class="org-ul">
-<li><a id="orge7e3d01"></a>Left<br />
-<div class="outline-text-7" id="text-orge7e3d01">
+<li><a id="orgc5b849d"></a>Left<br />
+<div class="outline-text-7" id="text-orgc5b849d">
 <ol class="org-ol">
 <li>place point at @2$2 in original table</li>
 <li><code>M-x f-org-table-rotate-rest-of-row-left</code></li>
@@ -1822,8 +1822,8 @@ that serves as the starting point for the examples:
 </div>
 </li>
 
-<li><a id="org7c1251b"></a>Right<br />
-<div class="outline-text-7" id="text-org7c1251b">
+<li><a id="orga3ec21e"></a>Right<br />
+<div class="outline-text-7" id="text-orga3ec21e">
 <ol class="org-ol">
 <li>place point at @2$2 in original table</li>
 <li><code>M-x f-org-table-rotate-rest-of-row-right</code></li>
@@ -1841,8 +1841,8 @@ that serves as the starting point for the examples:
 </ul>
 </li>
 
-<li><a id="org74c8293"></a>Open field in row (table size grows)<br />
-<div class="outline-text-6" id="text-org74c8293">
+<li><a id="orgfe507e3"></a>Open field in row (table size grows)<br />
+<div class="outline-text-6" id="text-orgfe507e3">
 <p>
 This is just for completeness, interactively the same as typing <code>|
 S-TAB</code>.
@@ -1865,7 +1865,7 @@ S-TAB</code>.
 </ul>
 </li>
 
-<li><a id="row-sequence-in-column"></a><a id="orga4a5adf"></a>Rearrange the row sequence in one column only<br />
+<li><a id="row-sequence-in-column"></a><a id="org488d31d"></a>Rearrange the row sequence in one column only<br />
 <div class="outline-text-5" id="text-row-sequence-in-column">
 <p>
 The functions below can be used to change the column sequence in one
@@ -1887,10 +1887,10 @@ that serves as the starting point for the examples:
 </div>
 
 <ul class="org-ul">
-<li><a id="orgb68897f"></a>Move current field in column<br />
+<li><a id="orgaaa7a3b"></a>Move current field in column<br />
 <ul class="org-ul">
-<li><a id="org98ea656"></a>Up<br />
-<div class="outline-text-7" id="text-org98ea656">
+<li><a id="org9024a81"></a>Up<br />
+<div class="outline-text-7" id="text-org9024a81">
 <ol class="org-ol">
 <li>place point at "10" in original table</li>
 <li><code>M-x f-org-table-move-field-in-column-up</code></li>
@@ -1909,8 +1909,8 @@ that serves as the starting point for the examples:
 </div>
 </li>
 
-<li><a id="org340bd07"></a>Down<br />
-<div class="outline-text-7" id="text-org340bd07">
+<li><a id="org534ad43"></a>Down<br />
+<div class="outline-text-7" id="text-org534ad43">
 <ol class="org-ol">
 <li>place point at "9" in original table</li>
 <li><code>M-x f-org-table-move-field-in-column-down</code></li>
@@ -1931,10 +1931,10 @@ that serves as the starting point for the examples:
 </ul>
 </li>
 
-<li><a id="orge02ae0f"></a>Rotate rest of column (range from current field to end of column)<br />
+<li><a id="org9afc8d1"></a>Rotate rest of column (range from current field to end of column)<br />
 <ul class="org-ul">
-<li><a id="orgf2190ee"></a>Up<br />
-<div class="outline-text-7" id="text-orgf2190ee">
+<li><a id="orga3f624e"></a>Up<br />
+<div class="outline-text-7" id="text-orga3f624e">
 <ol class="org-ol">
 <li>place point at @2$2 in original table</li>
 <li><code>M-x f-org-table-rotate-rest-of-column-up</code></li>
@@ -1953,8 +1953,8 @@ that serves as the starting point for the examples:
 </div>
 </li>
 
-<li><a id="orgcb9293d"></a>Down<br />
-<div class="outline-text-7" id="text-orgcb9293d">
+<li><a id="orgedf46cb"></a>Down<br />
+<div class="outline-text-7" id="text-orgedf46cb">
 <ol class="org-ol">
 <li>place point at @2$2 in original table</li>
 <li><code>M-x f-org-table-rotate-rest-of-column-down</code></li>
@@ -1975,8 +1975,8 @@ that serves as the starting point for the examples:
 </ul>
 </li>
 
-<li><a id="org47c84c3"></a>Open field in column (table size grows)<br />
-<div class="outline-text-6" id="text-org47c84c3">
+<li><a id="orgdd37281"></a>Open field in column (table size grows)<br />
+<div class="outline-text-6" id="text-orgdd37281">
 <ol class="org-ol">
 <li>place point at @2$2 in original table</li>
 <li><code>M-x f-org-table-open-field-in-column-grow</code></li>
@@ -1998,8 +1998,8 @@ that serves as the starting point for the examples:
 </ul>
 </li>
 
-<li><a id="org314a94c"></a>Key bindings for some of the functions<br />
-<div class="outline-text-5" id="text-org314a94c">
+<li><a id="org10fb19b"></a>Key bindings for some of the functions<br />
+<div class="outline-text-5" id="text-org10fb19b">
 <p>
 I have this in an Org buffer to change temporarily to the desired
 behavior with <code>C-c C-c</code> on one of the three code snippets:
@@ -2038,8 +2038,8 @@ behavior with <code>C-c C-c</code> on one of the three code snippets:
 </div>
 </li>
 
-<li><a id="org901af54"></a>Implementation<br />
-<div class="outline-text-5" id="text-org901af54">
+<li><a id="org11ca433"></a>Implementation<br />
+<div class="outline-text-5" id="text-org11ca433">
 <p>
 The functions
 </p>
@@ -2166,8 +2166,8 @@ The other functions:
 </div>
 </li>
 
-<li><a id="org2ce857d"></a>Reasons why this is not put into the Org core<br />
-<div class="outline-text-5" id="text-org2ce857d">
+<li><a id="orgee62bea"></a>Reasons why this is not put into the Org core<br />
+<div class="outline-text-5" id="text-orgee62bea">
 <p>
 I consider this as only a hack for several reasons:
 </p>
@@ -2197,13 +2197,13 @@ all</li>
 </div>
 </div>
 
-<div id="outline-container-org9b416b1" class="outline-3">
-<h3 id="org9b416b1">Capture and Remember</h3>
-<div class="outline-text-3" id="text-org9b416b1">
+<div id="outline-container-orge6e8e13" class="outline-3">
+<h3 id="orge6e8e13">Capture and Remember</h3>
+<div class="outline-text-3" id="text-orge6e8e13">
 </div>
-<div id="outline-container-org9c02835" class="outline-4">
-<h4 id="org9c02835">Customize the size of the frame for remember</h4>
-<div class="outline-text-4" id="text-org9c02835">
+<div id="outline-container-org41a4621" class="outline-4">
+<h4 id="org41a4621">Customize the size of the frame for remember</h4>
+<div class="outline-text-4" id="text-org41a4621">
 <p>
 (Note: this hack is likely out of date due to the development of
 <code>org-capture</code>.)
@@ -2242,23 +2242,23 @@ reasonable size for the frame.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc901f49" class="outline-4">
-<h4 id="orgc901f49"><a href="https://github.com/PhilHudson/org-capture-vars.el">User-defined capture template variables with prompt and completion list</a></h4>
+<div id="outline-container-org49dce44" class="outline-4">
+<h4 id="org49dce44"><a href="https://github.com/PhilHudson/org-capture-vars.el">User-defined capture template variables with prompt and completion list</a></h4>
 </div>
-<div id="outline-container-org1ec12c5" class="outline-4">
-<h4 id="org1ec12c5"><a href="https://github.com/alphapapa/unpackaged.el#ensure-blank-lines-between-headings-and-before-contents">Ensure blank lines between headings and before contents</a></h4>
+<div id="outline-container-orgf5c307b" class="outline-4">
+<h4 id="orgf5c307b"><a href="https://github.com/alphapapa/unpackaged.el#ensure-blank-lines-between-headings-and-before-contents">Ensure blank lines between headings and before contents</a></h4>
 </div>
 </div>
-<div id="outline-container-orgc7a8cb2" class="outline-3">
-<h3 id="orgc7a8cb2">Handling Links</h3>
-<div class="outline-text-3" id="text-orgc7a8cb2">
+<div id="outline-container-org47ed1af" class="outline-3">
+<h3 id="org47ed1af">Handling Links</h3>
+<div class="outline-text-3" id="text-org47ed1af">
 </div>
-<div id="outline-container-orgdbd9c96" class="outline-4">
-<h4 id="orgdbd9c96"><a href="#heading-to-link">Turn a heading into an org link</a></h4>
+<div id="outline-container-org5f793df" class="outline-4">
+<h4 id="org5f793df"><a href="#heading-to-link">Turn a heading into an org link</a></h4>
 </div>
-<div id="outline-container-org485a439" class="outline-4">
-<h4 id="org485a439">Quickaccess to the link part of hyperlinks</h4>
-<div class="outline-text-4" id="text-org485a439">
+<div id="outline-container-org32b9429" class="outline-4">
+<h4 id="org32b9429">Quickaccess to the link part of hyperlinks</h4>
+<div class="outline-text-4" id="text-org32b9429">
 <p>
 Christian Moe <a href="http://permalink.gmane.org/gmane.emacs.orgmode/43122">asked</a>, if there is a simpler way to copy the link part
 of an org hyperling other than to use `C-c C-l C-a C-k C-g',
@@ -2299,9 +2299,9 @@ They put the link destination on the killring and can be easily bound to a key.
 </div>
 </div>
 
-<div id="outline-container-orge1cd625" class="outline-4">
-<h4 id="orge1cd625">Insert link with HTML title as default description</h4>
-<div class="outline-text-4" id="text-orge1cd625">
+<div id="outline-container-orgd810367" class="outline-4">
+<h4 id="orgd810367">Insert link with HTML title as default description</h4>
+<div class="outline-text-4" id="text-orgd810367">
 <p>
 When using `org-insert-link' (`C-c C-l') it might be useful to extract contents
 from HTML &lt;title&gt; tag and use it as a default link description. Here is a way to
@@ -2338,13 +2338,13 @@ Then just use `M-x my-org-insert-link' instead of `org-insert-link'.
 </div>
 </div>
 
-<div id="outline-container-orgda6667c" class="outline-3">
-<h3 id="orgda6667c">Archiving Content in Org-Mode</h3>
-<div class="outline-text-3" id="text-orgda6667c">
+<div id="outline-container-org7e0711e" class="outline-3">
+<h3 id="org7e0711e">Archiving Content in Org-Mode</h3>
+<div class="outline-text-3" id="text-org7e0711e">
 </div>
-<div id="outline-container-org92aaf2c" class="outline-4">
-<h4 id="org92aaf2c">Preserve top level headings when archiving to a file</h4>
-<div class="outline-text-4" id="text-org92aaf2c">
+<div id="outline-container-org4441314" class="outline-4">
+<h4 id="org4441314">Preserve top level headings when archiving to a file</h4>
+<div class="outline-text-4" id="text-org4441314">
 <ul class="org-ul">
 <li>Matt Lundin</li>
 </ul>
@@ -2430,9 +2430,9 @@ tags found on those headings:
 </div>
 </div>
 
-<div id="outline-container-orgf344340" class="outline-4">
-<h4 id="orgf344340">Archive in a date tree</h4>
-<div class="outline-text-4" id="text-orgf344340">
+<div id="outline-container-orge93a9b5" class="outline-4">
+<h4 id="orge93a9b5">Archive in a date tree</h4>
+<div class="outline-text-4" id="text-orge93a9b5">
 <p>
 Posted to Org-mode mailing list by Osamu Okano <span class="timestamp-wrapper"><span class="timestamp">[2010-04-21 Wed]</span></span>.
 </p>
@@ -2477,9 +2477,9 @@ Posted to Org-mode mailing list by Osamu Okano <span class="timestamp-wrapper"><
 </div>
 </div>
 
-<div id="outline-container-orgdb14aea" class="outline-4">
-<h4 id="orgdb14aea">Add inherited tags to archived entries</h4>
-<div class="outline-text-4" id="text-orgdb14aea">
+<div id="outline-container-org58fb96e" class="outline-4">
+<h4 id="org58fb96e">Add inherited tags to archived entries</h4>
+<div class="outline-text-4" id="text-org58fb96e">
 <p>
 To make <code>org-archive-subtree</code> keep inherited tags, Osamu OKANO suggests to
 advise the function like this:
@@ -2495,13 +2495,13 @@ advise the function like this:
 </div>
 </div>
 
-<div id="outline-container-orge4a447f" class="outline-3">
-<h3 id="orge4a447f">Using and Managing Org-Metadata</h3>
-<div class="outline-text-3" id="text-orge4a447f">
+<div id="outline-container-orgf77476a" class="outline-3">
+<h3 id="orgf77476a">Using and Managing Org-Metadata</h3>
+<div class="outline-text-3" id="text-orgf77476a">
 </div>
-<div id="outline-container-org9c86ea1" class="outline-4">
-<h4 id="org9c86ea1">Remove redundant tags of headlines</h4>
-<div class="outline-text-4" id="text-org9c86ea1">
+<div id="outline-container-org625ebb1" class="outline-4">
+<h4 id="org625ebb1">Remove redundant tags of headlines</h4>
+<div class="outline-text-4" id="text-org625ebb1">
 <p>
 &#x2013; David Maus
 </p>
@@ -2536,9 +2536,9 @@ headline or the #+FILETAGS: statement.
 </div>
 </div>
 
-<div id="outline-container-org19682c2" class="outline-4">
-<h4 id="org19682c2">Remove empty property drawers</h4>
-<div class="outline-text-4" id="text-org19682c2">
+<div id="outline-container-orga6ceb53" class="outline-4">
+<h4 id="orga6ceb53">Remove empty property drawers</h4>
+<div class="outline-text-4" id="text-orga6ceb53">
 <p>
 David Maus proposed this:
 </p>
@@ -2559,9 +2559,9 @@ David Maus proposed this:
 </div>
 </div>
 
-<div id="outline-container-orgccdc418" class="outline-4">
-<h4 id="orgccdc418">Group task list by a property</h4>
-<div class="outline-text-4" id="text-orgccdc418">
+<div id="outline-container-org3d607ab" class="outline-4">
+<h4 id="org3d607ab">Group task list by a property</h4>
+<div class="outline-text-4" id="text-org3d607ab">
 <p>
 This advice allows you to group a task list in Org-Mode.  To use it,
 set the variable <code>org-agenda-group-by-property</code> to the name of a
@@ -2620,9 +2620,9 @@ agenda view will group tasks by that property prior to searching.
 </div>
 </div>
 </div>
-<div id="outline-container-org8acf931" class="outline-4">
-<h4 id="org8acf931">A way to tag a task so that when clocking-out user is prompted to take a note.</h4>
-<div class="outline-text-4" id="text-org8acf931">
+<div id="outline-container-org8c905a2" class="outline-4">
+<h4 id="org8c905a2">A way to tag a task so that when clocking-out user is prompted to take a note.</h4>
+<div class="outline-text-4" id="text-org8c905a2">
 <p>
 Thanks to Richard Riley (see <a href="http://permalink.gmane.org/gmane.emacs.orgmode/40896">this post on the mailing list</a>).
 </p>
@@ -2648,9 +2648,9 @@ when the tag "<code>clockout_note</code>" is found in a headline. It uses the ta
 </div>
 </div>
 </div>
-<div id="outline-container-orgc4c4ce1" class="outline-4">
-<h4 id="orgc4c4ce1">Dynamically adjust tag position</h4>
-<div class="outline-text-4" id="text-orgc4c4ce1">
+<div id="outline-container-org854655c" class="outline-4">
+<h4 id="org854655c">Dynamically adjust tag position</h4>
+<div class="outline-text-4" id="text-org854655c">
 <p>
 Here is a bit of code that allows you to have the tags always
 right-adjusted in the buffer.
@@ -2737,9 +2737,9 @@ changed.
 </div>
 </div>
 </div>
-<div id="outline-container-org601aefe" class="outline-4">
-<h4 id="org601aefe">Use an "attach" link type to open files without worrying about their location</h4>
-<div class="outline-text-4" id="text-org601aefe">
+<div id="outline-container-orge440ff9" class="outline-4">
+<h4 id="orge440ff9">Use an "attach" link type to open files without worrying about their location</h4>
+<div class="outline-text-4" id="text-orge440ff9">
 <p>
 &#x2013; Darlan Cavalcante Moreira
 </p>
@@ -2777,13 +2777,13 @@ This works very well.
 </div>
 </div>
 
-<div id="outline-container-orgf687826" class="outline-3">
-<h3 id="orgf687826">Org Agenda and Task Management</h3>
-<div class="outline-text-3" id="text-orgf687826">
+<div id="outline-container-orgd0a2b11" class="outline-3">
+<h3 id="orgd0a2b11">Org Agenda and Task Management</h3>
+<div class="outline-text-3" id="text-orgd0a2b11">
 </div>
-<div id="outline-container-org8dc4f79" class="outline-4">
-<h4 id="org8dc4f79">Make it easier to set org-agenda-files from multiple directories</h4>
-<div class="outline-text-4" id="text-org8dc4f79">
+<div id="outline-container-org3b16bba" class="outline-4">
+<h4 id="org3b16bba">Make it easier to set org-agenda-files from multiple directories</h4>
+<div class="outline-text-4" id="text-org3b16bba">
 <ul class="org-ul">
 <li>Matt Lundin</li>
 </ul>
@@ -2858,8 +2858,8 @@ files.
 </div>
 </div>
 
-<div id="outline-container-org78112c5" class="outline-4">
-<h4 id="set-agenda-files-by-filetag"><a id="org78112c5"></a>Restrict org-agenda-files by filetag</h4>
+<div id="outline-container-org781eb59" class="outline-4">
+<h4 id="set-agenda-files-by-filetag"><a id="org781eb59"></a>Restrict org-agenda-files by filetag</h4>
 <div class="outline-text-4" id="text-set-agenda-files-by-filetag">
 <ul class="org-ul">
 <li>Matt Lundin</li>
@@ -2932,9 +2932,9 @@ containing the filetag. To release the restriction, type C-c C-x &gt;
 </div>
 </div>
 
-<div id="outline-container-orga1c36bb" class="outline-4">
-<h4 id="orga1c36bb">Highlight the agenda line under cursor</h4>
-<div class="outline-text-4" id="text-orga1c36bb">
+<div id="outline-container-org6b5c267" class="outline-4">
+<h4 id="org6b5c267">Highlight the agenda line under cursor</h4>
+<div class="outline-text-4" id="text-org6b5c267">
 <p>
 This is useful to make sure what task you are operating on.
 </p>
@@ -2963,9 +2963,9 @@ Under XEmacs:
 </div>
 </div>
 
-<div id="outline-container-org4982e36" class="outline-4">
-<h4 id="org4982e36">Split frame horizontally for agenda</h4>
-<div class="outline-text-4" id="text-org4982e36">
+<div id="outline-container-org27e6cb4" class="outline-4">
+<h4 id="org27e6cb4">Split frame horizontally for agenda</h4>
+<div class="outline-text-4" id="text-org27e6cb4">
 <p>
 If you would like to split the frame into two side-by-side windows when
 displaying the agenda, try this hack from Jan Rehders, which uses the
@@ -2986,9 +2986,9 @@ displaying the agenda, try this hack from Jan Rehders, which uses the
 </div>
 </div>
 
-<div id="outline-container-orgaba70be" class="outline-4">
-<h4 id="orgaba70be">Automatically add an appointment when clocking in a task</h4>
-<div class="outline-text-4" id="text-orgaba70be">
+<div id="outline-container-org620196d" class="outline-4">
+<h4 id="org620196d">Automatically add an appointment when clocking in a task</h4>
+<div class="outline-text-4" id="text-org620196d">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Make sure you have a sensible value for `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">appt-message-warning-time</span><span style="font-weight: bold; font-style: italic;">'</span>
 (<span style="font-weight: bold;">defvar</span> <span style="font-weight: bold; font-style: italic;">bzg-org-clock-in-appt-delay</span> 100
@@ -3075,18 +3075,18 @@ agenda buffer with the advice above will bring an error.
 </div>
 </div>
 
-<div id="outline-container-orgb96ce72" class="outline-4">
-<h4 id="orgb96ce72">Using external programs for appointments reminders</h4>
-<div class="outline-text-4" id="text-orgb96ce72">
+<div id="outline-container-org7d3fa77" class="outline-4">
+<h4 id="org7d3fa77">Using external programs for appointments reminders</h4>
+<div class="outline-text-4" id="text-org7d3fa77">
 <p>
 Read this rich <a href="http://comments.gmane.org/gmane.emacs.orgmode/46641">thread</a> from the org-mode list.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9e792bd" class="outline-4">
-<h4 id="org9e792bd">Remove from agenda time grid lines that are in an appointment</h4>
-<div class="outline-text-4" id="text-org9e792bd">
+<div id="outline-container-org5428ce8" class="outline-4">
+<h4 id="org5428ce8">Remove from agenda time grid lines that are in an appointment</h4>
+<div class="outline-text-4" id="text-org5428ce8">
 <p>
 The agenda shows lines for the time grid.  Some people think that
 these lines are a distraction when there are appointments at those
@@ -3139,9 +3139,9 @@ appointment:
 </div>
 </div>
 </div>
-<div id="outline-container-org6bb1ee7" class="outline-4">
-<h4 id="org6bb1ee7">Disable version control for Org mode agenda files</h4>
-<div class="outline-text-4" id="text-org6bb1ee7">
+<div id="outline-container-org446fa7a" class="outline-4">
+<h4 id="org446fa7a">Disable version control for Org mode agenda files</h4>
+<div class="outline-text-4" id="text-org446fa7a">
 <p>
 &#x2013; David Maus
 </p>
@@ -3164,9 +3164,9 @@ vc-mode to be enabled for these files.
 </div>
 </div>
 
-<div id="outline-container-org9ddf30a" class="outline-4">
-<h4 id="org9ddf30a">Easy customization of TODO colors</h4>
-<div class="outline-text-4" id="text-org9ddf30a">
+<div id="outline-container-orgaded7d3" class="outline-4">
+<h4 id="orgaded7d3">Easy customization of TODO colors</h4>
+<div class="outline-text-4" id="text-orgaded7d3">
 <p>
 &#x2013; Ryan C. Thompson
 </p>
@@ -3236,9 +3236,9 @@ Here's the code, in a form you can put in your <code>.emacs</code>
 </div>
 </div>
 
-<div id="outline-container-org1cc5e42" class="outline-4">
-<h4 id="org1cc5e42">Add an effort estimate on the fly when clocking in</h4>
-<div class="outline-text-4" id="text-org1cc5e42">
+<div id="outline-container-org9244a3f" class="outline-4">
+<h4 id="org9244a3f">Add an effort estimate on the fly when clocking in</h4>
+<div class="outline-text-4" id="text-org9244a3f">
 <p>
 You can use <code>org-clock-in-prepare-hook</code> to add an effort estimate.
 This way you can easily have a "tea-timer" for your tasks when they
@@ -3280,9 +3280,9 @@ Or you can use a default effort for such a timer:
 </div>
 </div>
 
-<div id="outline-container-org6897e3d" class="outline-4">
-<h4 id="org6897e3d">Use idle timer for automatic agenda views</h4>
-<div class="outline-text-4" id="text-org6897e3d">
+<div id="outline-container-org46c6009" class="outline-4">
+<h4 id="org46c6009">Use idle timer for automatic agenda views</h4>
+<div class="outline-text-4" id="text-org46c6009">
 <p>
 From John Wiegley's mailing list post (March 18, 2010):
 </p>
@@ -3331,9 +3331,9 @@ whereas before I had a tendency to forget that it was there.
 </div>
 </div>
 
-<div id="outline-container-org528f793" class="outline-4">
-<h4 id="org528f793">Refresh the agenda view regularly</h4>
-<div class="outline-text-4" id="text-org528f793">
+<div id="outline-container-org173f417" class="outline-4">
+<h4 id="org173f417">Refresh the agenda view regularly</h4>
+<div class="outline-text-4" id="text-org173f417">
 <p>
 Hack sent by Kiwon Um:
 </p>
@@ -3351,9 +3351,9 @@ Hack sent by Kiwon Um:
 </div>
 </div>
 
-<div id="outline-container-org19dffc2" class="outline-4">
-<h4 id="org19dffc2">Reschedule agenda items to today with a single command</h4>
-<div class="outline-text-4" id="text-org19dffc2">
+<div id="outline-container-org787f187" class="outline-4">
+<h4 id="org787f187">Reschedule agenda items to today with a single command</h4>
+<div class="outline-text-4" id="text-org787f187">
 <p>
 This was suggested by Carsten in reply to David Abrahams:
 </p>
@@ -3367,9 +3367,9 @@ This was suggested by Carsten in reply to David Abrahams:
 </div>
 </div>
 
-<div id="outline-container-orgb41cd02" class="outline-4">
-<h4 id="orgb41cd02">Mark subtree DONE along with all subheadings</h4>
-<div class="outline-text-4" id="text-orgb41cd02">
+<div id="outline-container-org1cf591b" class="outline-4">
+<h4 id="org1cf591b">Mark subtree DONE along with all subheadings</h4>
+<div class="outline-text-4" id="text-org1cf591b">
 <p>
 Bernt Hansen <a href="http://permalink.gmane.org/gmane.emacs.orgmode/44693">suggested</a> this command:
 </p>
@@ -3394,8 +3394,8 @@ Then M-x bh/mark-subtree-done.
 </div>
 </div>
 
-<div id="outline-container-orga049af0" class="outline-4">
-<h4 id="mark-done-when-all-checkboxes-checked"><a id="orga049af0"></a>Mark heading done when all checkboxes are checked.</h4>
+<div id="outline-container-orga8d2625" class="outline-4">
+<h4 id="mark-done-when-all-checkboxes-checked"><a id="orga8d2625"></a>Mark heading done when all checkboxes are checked.</h4>
 <div class="outline-text-4" id="text-mark-done-when-all-checkboxes-checked">
 <p>
 An item consists of a list with checkboxes.  When all of the
@@ -3443,8 +3443,8 @@ added willy-nilly any time that the statistics cookie is changed.
 </div>
 </div>
 
-<div id="outline-container-org55a84f7" class="outline-4">
-<h4 id="links-to-agenda-views"><a id="org55a84f7"></a>Links to custom agenda views</h4>
+<div id="outline-container-org5d43e0f" class="outline-4">
+<h4 id="links-to-agenda-views"><a id="org5d43e0f"></a>Links to custom agenda views</h4>
 <div class="outline-text-4" id="text-links-to-agenda-views">
 <p>
 This hack was <a href="http://lists.gnu.org/archive/html/emacs-orgmode/2012-08/msg00986.html">posted to the mailing list</a> by Nathan Neff.
@@ -3472,12 +3472,12 @@ before you proceed.
 </div>
 </div>
 
-<div id="outline-container-org9463975" class="outline-3">
-<h3 id="org9463975">Exporting org files</h3>
-<div class="outline-text-3" id="text-org9463975">
+<div id="outline-container-orgcb0b8ef" class="outline-3">
+<h3 id="orgcb0b8ef">Exporting org files</h3>
+<div class="outline-text-3" id="text-orgcb0b8ef">
 </div>
-<div id="outline-container-org239b98a" class="outline-4">
-<h4 id="ignoreheadline"><a id="org239b98a"></a>Ignoring headlines during export</h4>
+<div id="outline-container-orgf847cd7" class="outline-4">
+<h4 id="ignoreheadline"><a id="orgf847cd7"></a>Ignoring headlines during export</h4>
 <div class="outline-text-4" id="text-ignoreheadline">
 <p>
 Sometimes users want to ignore the headline text during export like in
@@ -3557,9 +3557,9 @@ export.
 </div>
 </div>
 
-<div id="outline-container-orga3f7b95" class="outline-4">
-<h4 id="orga3f7b95">Export Org to Org and handle includes.</h4>
-<div class="outline-text-4" id="text-orga3f7b95">
+<div id="outline-container-org2f3cf71" class="outline-4">
+<h4 id="org2f3cf71">Export Org to Org and handle includes.</h4>
+<div class="outline-text-4" id="text-org2f3cf71">
 <p>
 N.B: this does not apply to the "new" export engine (&gt;= 8.0) - the function
 <code>org-export-handle-include-files-recurse</code> is only available in earlier versions.
@@ -3592,8 +3592,8 @@ Nick Dokos came up with this useful function:
 </div>
 </div>
 
-<div id="outline-container-org52ab19b" class="outline-4">
-<h4 id="latex-command-for-floats"><a id="org52ab19b"></a>Specifying LaTeX commands to floating environments</h4>
+<div id="outline-container-org612d1e4" class="outline-4">
+<h4 id="latex-command-for-floats"><a id="org612d1e4"></a>Specifying LaTeX commands to floating environments</h4>
 <div class="outline-text-4" id="text-latex-command-for-floats">
 <p>
 The keyword <code>placement</code> can be used to specify placement options to
@@ -3646,9 +3646,9 @@ workaround, one can use the following:
 </div>
 </div>
 
-<div id="outline-container-org2208072" class="outline-4">
-<h4 id="org2208072">Styling code sections with CSS</h4>
-<div class="outline-text-4" id="text-org2208072">
+<div id="outline-container-orgcb58082" class="outline-4">
+<h4 id="orgcb58082">Styling code sections with CSS</h4>
+<div class="outline-text-4" id="text-orgcb58082">
 <p>
 Code sections (marked with <code>#+begin_src</code> and <code>#+end_src</code>) are exported
 to HTML using <code>&lt;pre&gt;</code> tags, and assigned CSS classes by their content
@@ -3682,9 +3682,9 @@ class) from input (all the <code>.src-*</code> classes).
 </div>
 </div>
 
-<div id="outline-container-orge6ab5a9" class="outline-4">
-<h4 id="orge6ab5a9">Where can I find nice themes for HTML export?</h4>
-<div class="outline-text-4" id="text-orge6ab5a9">
+<div id="outline-container-orgca0687e" class="outline-4">
+<h4 id="orgca0687e">Where can I find nice themes for HTML export?</h4>
+<div class="outline-text-4" id="text-orgca0687e">
 <p>
 You can find great looking HTML themes (CSS + JS) at
 <a href="https://github.com/fniessen/org-html-themes">https://github.com/fniessen/org-html-themes</a>, currently:
@@ -3719,9 +3719,9 @@ HTML theme Bigblow.
 </div>
 </div>
 
-<div id="outline-container-orgfc1cf94" class="outline-4">
-<h4 id="orgfc1cf94">Including external text fragments</h4>
-<div class="outline-text-4" id="text-orgfc1cf94">
+<div id="outline-container-orge151c7c" class="outline-4">
+<h4 id="orge151c7c">Including external text fragments</h4>
+<div class="outline-text-4" id="text-orge151c7c">
 <p>
 I recently had to document some source code but could not modify the
 source files themselves. Here is a setup that lets you refer to
@@ -3806,13 +3806,13 @@ approaches are possible.
 </div>
 </div>
 
-<div id="outline-container-org5bca6ba" class="outline-3">
-<h3 id="org5bca6ba">Babel</h3>
-<div class="outline-text-3" id="text-org5bca6ba">
+<div id="outline-container-orgcc47029" class="outline-3">
+<h3 id="orgcc47029">Babel</h3>
+<div class="outline-text-3" id="text-orgcc47029">
 </div>
-<div id="outline-container-orgac38280" class="outline-4">
-<h4 id="orgac38280">How do I preview LaTeX fragments when in a LaTeX source block?</h4>
-<div class="outline-text-4" id="text-orgac38280">
+<div id="outline-container-orgaf8af3b" class="outline-4">
+<h4 id="orgaf8af3b">How do I preview LaTeX fragments when in a LaTeX source block?</h4>
+<div class="outline-text-4" id="text-orgaf8af3b">
 <p>
 When editing <code>LaTeX</code> source blocks, you may want to preview LaTeX fragments
 just like in an Org-mode buffer.  You can do this by using the usual
@@ -3837,13 +3837,13 @@ Thanks to Sebastian Hofer for sharing this.
 </div>
 </div>
 
-<div id="outline-container-org6f69bd6" class="outline-2">
-<h2 id="org6f69bd6">Hacking Org: Working with Org-mode and other Emacs Packages.</h2>
-<div class="outline-text-2" id="text-org6f69bd6">
+<div id="outline-container-orgffaf628" class="outline-2">
+<h2 id="orgffaf628">Hacking Org: Working with Org-mode and other Emacs Packages.</h2>
+<div class="outline-text-2" id="text-orgffaf628">
 </div>
-<div id="outline-container-orga7d6c3f" class="outline-3">
-<h3 id="orga7d6c3f">How to ediff folded Org files</h3>
-<div class="outline-text-3" id="text-orga7d6c3f">
+<div id="outline-container-org8a96639" class="outline-3">
+<h3 id="org8a96639">How to ediff folded Org files</h3>
+<div class="outline-text-3" id="text-org8a96639">
 <p>
 A rather often quip among Org users is when looking at chages with
 ediff.  Ediff tends to fold the Org buffers when comparing.  This can
@@ -3854,9 +3854,9 @@ Punnoose.
 </div>
 </div>
 
-<div id="outline-container-orgd0113f1" class="outline-3">
-<h3 id="orgd0113f1">org-remember-anything</h3>
-<div class="outline-text-3" id="text-orgd0113f1">
+<div id="outline-container-org5761da1" class="outline-3">
+<h3 id="org5761da1">org-remember-anything</h3>
+<div class="outline-text-3" id="text-org5761da1">
 <p>
 <a href="http://www.emacswiki.org/cgi-bin/wiki/Anything">Anything</a> users may find the snippet below interesting:
 </p>
@@ -3881,9 +3881,9 @@ remember templates, so that you are out of keys to assign those to.
 </div>
 </div>
 
-<div id="outline-container-orgf455ae6" class="outline-3">
-<h3 id="orgf455ae6">Org-mode and saveplace.el</h3>
-<div class="outline-text-3" id="text-orgf455ae6">
+<div id="outline-container-orgba9e3c0" class="outline-3">
+<h3 id="orgba9e3c0">Org-mode and saveplace.el</h3>
+<div class="outline-text-3" id="text-orgba9e3c0">
 <p>
 Fix a problem with <code>saveplace.el</code> putting you back in a folded position:
 </p>
@@ -3900,9 +3900,9 @@ Fix a problem with <code>saveplace.el</code> putting you back in a folded positi
 </div>
 </div>
 
-<div id="outline-container-org90782e5" class="outline-3">
-<h3 id="org90782e5">Using ido-mode for org-refile (and archiving via refile)</h3>
-<div class="outline-text-3" id="text-org90782e5">
+<div id="outline-container-org3c09ef1" class="outline-3">
+<h3 id="org3c09ef1">Using ido-mode for org-refile (and archiving via refile)</h3>
+<div class="outline-text-3" id="text-org3c09ef1">
 <p>
 First set up ido-mode, for example using:
 </p>
@@ -3957,9 +3957,9 @@ Now when looking for a refile target, you can use the full power of ido to find 
 </div>
 </div>
 
-<div id="outline-container-org77bc169" class="outline-3">
-<h3 id="org77bc169">Using ido-completing-read to find attachments</h3>
-<div class="outline-text-3" id="text-org77bc169">
+<div id="outline-container-org3a53b12" class="outline-3">
+<h3 id="org3a53b12">Using ido-completing-read to find attachments</h3>
+<div class="outline-text-3" id="text-org3a53b12">
 <p>
 &#x2013; Matt Lundin.
 </p>
@@ -4019,9 +4019,9 @@ press <code>C-;</code>.
 </div>
 </div>
 
-<div id="outline-container-org2a9240e" class="outline-3">
-<h3 id="org2a9240e">Link to Gnus messages by Message-Id</h3>
-<div class="outline-text-3" id="text-org2a9240e">
+<div id="outline-container-orgfd16c69" class="outline-3">
+<h3 id="orgfd16c69">Link to Gnus messages by Message-Id</h3>
+<div class="outline-text-3" id="text-orgfd16c69">
 <p>
 In a <a href="http://thread.gmane.org/gmane.emacs.orgmode/8860">recent thread</a> on the Org-Mode mailing list, there was some
 discussion about linking to Gnus messages without encoding the folder
@@ -4120,9 +4120,9 @@ article</a>.
 </div>
 </div>
 
-<div id="outline-container-orgd682412" class="outline-3">
-<h3 id="orgd682412">Store link to a message when sending in Gnus</h3>
-<div class="outline-text-3" id="text-orgd682412">
+<div id="outline-container-orgca1a73d" class="outline-3">
+<h3 id="orgca1a73d">Store link to a message when sending in Gnus</h3>
+<div class="outline-text-3" id="text-orgca1a73d">
 <p>
 Ulf Stegemann came up with this solution (see his <a href="http://www.mail-archive.com/emacs-orgmode@gnu.org/msg33278.html">original message</a>):
 </p>
@@ -4171,9 +4171,9 @@ Ulf Stegemann came up with this solution (see his <a href="http://www.mail-archi
 </div>
 </div>
 
-<div id="outline-container-org917ec11" class="outline-3">
-<h3 id="org917ec11">Link to visit a file and run occur</h3>
-<div class="outline-text-3" id="text-org917ec11">
+<div id="outline-container-orged93d46" class="outline-3">
+<h3 id="orged93d46">Link to visit a file and run occur</h3>
+<div class="outline-text-3" id="text-orged93d46">
 <p>
 Add the following bit of code to your startup (after loading org),
 and you can then use links like <code>occur:my-file.txt#regex</code> to open a
@@ -4192,9 +4192,9 @@ file and run occur with the regex on it.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc6682e4" class="outline-3">
-<h3 id="orgc6682e4">Send html messages and attachments with Wanderlust</h3>
-<div class="outline-text-3" id="text-orgc6682e4">
+<div id="outline-container-org0f111bd" class="outline-3">
+<h3 id="org0f111bd">Send html messages and attachments with Wanderlust</h3>
+<div class="outline-text-3" id="text-org0f111bd">
 <p>
 &#x2013; David Maus
 </p>
@@ -4208,9 +4208,9 @@ message body is created right before sending starts.
 </p>
 </div>
 
-<div id="outline-container-orgd1a1516" class="outline-4">
-<h4 id="orgd1a1516">Send HTML message</h4>
-<div class="outline-text-4" id="text-orgd1a1516">
+<div id="outline-container-org2575e28" class="outline-4">
+<h4 id="org2575e28">Send HTML message</h4>
+<div class="outline-text-4" id="text-org2575e28">
 <p>
 Putting the code below in your .emacs adds following four functions:
 </p>
@@ -4366,9 +4366,9 @@ you send HTML that looks quite good.
 </div>
 </div>
 
-<div id="outline-container-org55e4bf0" class="outline-4">
-<h4 id="org55e4bf0">Attach HTML of region or subtree</h4>
-<div class="outline-text-4" id="text-org55e4bf0">
+<div id="outline-container-org7b2837b" class="outline-4">
+<h4 id="org7b2837b">Attach HTML of region or subtree</h4>
+<div class="outline-text-4" id="text-org7b2837b">
 <p>
 Instead of sending a complete HTML message you might only send parts
 of an Org file as HTML for the poor souls who are plagued with
@@ -4414,9 +4414,9 @@ complete subtree otherwise.
 </div>
 </div>
 
-<div id="outline-container-org2705d79" class="outline-4">
-<h4 id="org2705d79">Adopting for Gnus</h4>
-<div class="outline-text-4" id="text-org2705d79">
+<div id="outline-container-org5343b31" class="outline-4">
+<h4 id="org5343b31">Adopting for Gnus</h4>
+<div class="outline-text-4" id="text-org5343b31">
 <p>
 The whole magic lies in the special strings that mark a HTML
 attachment.  So you might just have to find out what these special
@@ -4425,9 +4425,9 @@ strings are in message-mode and modify the functions accordingly.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcc11533" class="outline-3">
-<h3 id="orgcc11533">Add sunrise/sunset times to the agenda.</h3>
-<div class="outline-text-3" id="text-orgcc11533">
+<div id="outline-container-org032b3e4" class="outline-3">
+<h3 id="org032b3e4">Add sunrise/sunset times to the agenda.</h3>
+<div class="outline-text-3" id="text-org032b3e4">
 <p>
 &#x2013; Nick Dokos
 </p>
@@ -4513,9 +4513,9 @@ gets rid of the timezone information and can show the location.
 </p>
 </div>
 </div>
-<div id="outline-container-org23bb736" class="outline-3">
-<h3 id="org23bb736">Add lunar phases to the agenda.</h3>
-<div class="outline-text-3" id="text-org23bb736">
+<div id="outline-container-org38cf893" class="outline-3">
+<h3 id="org38cf893">Add lunar phases to the agenda.</h3>
+<div class="outline-text-3" id="text-org38cf893">
 <p>
 &#x2013; Rüdiger
 </p>
@@ -4579,9 +4579,9 @@ See <a href="https://en.wikipedia.org/wiki/Astronomical_symbols#Moon">Astronomic
 </div>
 </div>
 
-<div id="outline-container-orgdc9843d" class="outline-3">
-<h3 id="orgdc9843d">Export BBDB contacts to org-contacts.el</h3>
-<div class="outline-text-3" id="text-orgdc9843d">
+<div id="outline-container-org4b0799d" class="outline-3">
+<h3 id="org4b0799d">Export BBDB contacts to org-contacts.el</h3>
+<div class="outline-text-3" id="text-org4b0799d">
 <p>
 Try this tool by Wes Hardaker:
 </p>
@@ -4592,9 +4592,9 @@ Try this tool by Wes Hardaker:
 </div>
 </div>
 
-<div id="outline-container-org6966fdb" class="outline-3">
-<h3 id="org6966fdb">Calculating date differences - how to write a simple elisp function</h3>
-<div class="outline-text-3" id="text-org6966fdb">
+<div id="outline-container-org807e1a6" class="outline-3">
+<h3 id="org807e1a6">Calculating date differences - how to write a simple elisp function</h3>
+<div class="outline-text-3" id="text-org807e1a6">
 <p>
 Alexander Wingård asked how to calculate the number of days between a
 time stamp in his org file and today (see
@@ -4687,9 +4687,9 @@ various pieces.
 </div>
 </div>
 
-<div id="outline-container-org8c5ac59" class="outline-3">
-<h3 id="org8c5ac59">ibuffer and org files</h3>
-<div class="outline-text-3" id="text-org8c5ac59">
+<div id="outline-container-org24bad50" class="outline-3">
+<h3 id="org24bad50">ibuffer and org files</h3>
+<div class="outline-text-3" id="text-org24bad50">
 <p>
 Neil Smithline posted this snippet to let you browse org files with
 <code>ibuffer</code>:
@@ -4707,9 +4707,9 @@ Neil Smithline posted this snippet to let you browse org files with
 </div>
 </div>
 
-<div id="outline-container-orga236994" class="outline-3">
-<h3 id="orga236994">Enable org-mode links in other modes</h3>
-<div class="outline-text-3" id="text-orga236994">
+<div id="outline-container-org47cb43e" class="outline-3">
+<h3 id="org47cb43e">Enable org-mode links in other modes</h3>
+<div class="outline-text-3" id="text-org47cb43e">
 <p>
 Sean O'Halpin wrote a minor mode for this, please check it <a href="https://github.com/seanohalpin/org-link-minor-mode">here</a>.
 </p>
@@ -4720,9 +4720,9 @@ See the relevant discussion <a href="http://thread.gmane.org/gmane.emacs.orgmode
 </div>
 </div>
 
-<div id="outline-container-org2b0dc9d" class="outline-3">
-<h3 id="org2b0dc9d">poporg.el: edit comments in org-mode</h3>
-<div class="outline-text-3" id="text-org2b0dc9d">
+<div id="outline-container-org7b4e986" class="outline-3">
+<h3 id="org7b4e986">poporg.el: edit comments in org-mode</h3>
+<div class="outline-text-3" id="text-org7b4e986">
 <p>
 <a href="https://github.com/QBobWatson/poporg/blob/master/poporg.el">poporg.el</a> is a library by François Pinard which lets you edit comments
 and strings from your code using a separate org-mode buffer.
@@ -4730,9 +4730,9 @@ and strings from your code using a separate org-mode buffer.
 </div>
 </div>
 
-<div id="outline-container-org8b5cc3e" class="outline-3">
-<h3 id="org8b5cc3e">Convert a .csv file to an Org-mode table</h3>
-<div class="outline-text-3" id="text-org8b5cc3e">
+<div id="outline-container-org0c5a86b" class="outline-3">
+<h3 id="org0c5a86b">Convert a .csv file to an Org-mode table</h3>
+<div class="outline-text-3" id="text-org0c5a86b">
 <p>
 Nicolas Richard has a <a href="http://article.gmane.org/gmane.emacs.orgmode/65456">nice recipe</a> using the pcsv library (<a href="http://marmalade-repo.org/packages/pcsv">available</a> from
 the Marmelade ELPA repository):
@@ -4762,9 +4762,9 @@ the Marmelade ELPA repository):
 </div>
 </div>
 
-<div id="outline-container-org2d1f714" class="outline-3">
-<h3 id="org2d1f714">foldout.el</h3>
-<div class="outline-text-3" id="text-org2d1f714">
+<div id="outline-container-org963bab8" class="outline-3">
+<h3 id="org963bab8">foldout.el</h3>
+<div class="outline-text-3" id="text-org963bab8">
 <p>
 <code>foldout.el</code>, which is part of Emacs, is a nice little companion for
 <code>outline-mode</code>.  With <code>foldout.el</code> one can narrow to a subtree and
@@ -4795,13 +4795,13 @@ instead of <code>outline-show-entry</code>.
 </div>
 </div>
 
-<div id="outline-container-orgecb4ace" class="outline-2">
-<h2 id="orgecb4ace">Hacking Org: Working with Org-mode and External Programs.</h2>
-<div class="outline-text-2" id="text-orgecb4ace">
+<div id="outline-container-orgf33e1de" class="outline-2">
+<h2 id="orgf33e1de">Hacking Org: Working with Org-mode and External Programs.</h2>
+<div class="outline-text-2" id="text-orgf33e1de">
 </div>
-<div id="outline-container-org246ca8a" class="outline-3">
-<h3 id="org246ca8a">Use Org-mode with Screen [Andrew Hyatt]</h3>
-<div class="outline-text-3" id="text-org246ca8a">
+<div id="outline-container-orgd955fdd" class="outline-3">
+<h3 id="orgd955fdd">Use Org-mode with Screen [Andrew Hyatt]</h3>
+<div class="outline-text-3" id="text-orgd955fdd">
 <p>
 "The general idea is that you start a task in which all the work will
 take place in a shell.  This usually is not a leaf-task for me, but
@@ -4859,8 +4859,8 @@ session containing your work!"
 </div>
 </div>
 
-<div id="outline-container-orgd2aeea1" class="outline-3">
-<h3 id="org-agenda-appt-zenity"><a id="orgd2aeea1"></a>Org Agenda + Appt + Zenity</h3>
+<div id="outline-container-orgc936535" class="outline-3">
+<h3 id="org-agenda-appt-zenity"><a id="orgc936535"></a>Org Agenda + Appt + Zenity</h3>
 <div class="outline-text-3" id="text-org-agenda-appt-zenity">
 <a name="agenda-appt-zenity"></a>
 <p>
@@ -4905,9 +4905,9 @@ popup window.
 </div>
 </div>
 
-<div id="outline-container-org6f9c6c7" class="outline-3">
-<h3 id="org6f9c6c7">Org and appointment notifications on Mac OS 10.8</h3>
-<div class="outline-text-3" id="text-org6f9c6c7">
+<div id="outline-container-orgd443426" class="outline-3">
+<h3 id="orgd443426">Org and appointment notifications on Mac OS 10.8</h3>
+<div class="outline-text-3" id="text-orgd443426">
 <p>
 Sarah Bagby <a href="http://mid.gmane.org/EA76104A-9ACD-4141-8D33-2E4D810D9B5A@geol.ucsb.edu">posted some code</a> on how to get appointments notifications on
 Mac OS 10.8 with <a href="https://github.com/alloy/terminal-notifier">terminal-notifier</a>.
@@ -4915,9 +4915,9 @@ Mac OS 10.8 with <a href="https://github.com/alloy/terminal-notifier">terminal-n
 </div>
 </div>
 
-<div id="outline-container-org1a39638" class="outline-3">
-<h3 id="org1a39638">Org-Mode + gnome-osd</h3>
-<div class="outline-text-3" id="text-org1a39638">
+<div id="outline-container-org0111621" class="outline-3">
+<h3 id="org0111621">Org-Mode + gnome-osd</h3>
+<div class="outline-text-3" id="text-org0111621">
 <p>
 Richard Riley uses gnome-osd in interaction with Org-Mode to display
 appointments.  You can look at the code on the <a href="http://www.emacswiki.org/emacs-en/OrgMode-OSD">emacswiki</a>.
@@ -4925,9 +4925,9 @@ appointments.  You can look at the code on the <a href="http://www.emacswiki.org
 </div>
 </div>
 
-<div id="outline-container-orgda3764c" class="outline-3">
-<h3 id="orgda3764c">txt2org convert text data to org-mode tables</h3>
-<div class="outline-text-3" id="text-orgda3764c">
+<div id="outline-container-org55a82be" class="outline-3">
+<h3 id="org55a82be">txt2org convert text data to org-mode tables</h3>
+<div class="outline-text-3" id="text-org55a82be">
 <p>
 From Eric Schulte
 </p>
@@ -5039,9 +5039,9 @@ Here is the script itself
 </div>
 </div>
 
-<div id="outline-container-org902a247" class="outline-3">
-<h3 id="org902a247">remind2org</h3>
-<div class="outline-text-3" id="text-org902a247">
+<div id="outline-container-org4013df4" class="outline-3">
+<h3 id="org4013df4">remind2org</h3>
+<div class="outline-text-3" id="text-org4013df4">
 <p>
 From Detlef Steuer
 </p>
@@ -5068,9 +5068,9 @@ future. :-)
 </div>
 </div>
 
-<div id="outline-container-orgf7546dc" class="outline-3">
-<h3 id="orgf7546dc">Useful webjumps for conkeror</h3>
-<div class="outline-text-3" id="text-orgf7546dc">
+<div id="outline-container-org33859a8" class="outline-3">
+<h3 id="org33859a8">Useful webjumps for conkeror</h3>
+<div class="outline-text-3" id="text-org33859a8">
 <p>
 If you are using the <a href="http://conkeror.org">conkeror browser</a>, maybe you want to put this into
 your <code>~/.conkerorrc</code> file:
@@ -5088,9 +5088,9 @@ Org-mode mailing list.
 </div>
 </div>
 
-<div id="outline-container-orgd2bb5a9" class="outline-3">
-<h3 id="orgd2bb5a9">Use MathJax for HTML export without requiring JavaScript</h3>
-<div class="outline-text-3" id="text-orgd2bb5a9">
+<div id="outline-container-orgdc32ae9" class="outline-3">
+<h3 id="orgdc32ae9">Use MathJax for HTML export without requiring JavaScript</h3>
+<div class="outline-text-3" id="text-orgdc32ae9">
 <p>
 As of 2010-08-14, MathJax is the default method used to export math to HTML.
 </p>
@@ -5112,9 +5112,9 @@ Read README.org and the comments in org-static-mathjax.el for usage instructions
 </p>
 </div>
 </div>
-<div id="outline-container-orga6b776c" class="outline-3">
-<h3 id="orga6b776c">Search Org files using lgrep</h3>
-<div class="outline-text-3" id="text-orga6b776c">
+<div id="outline-container-orgd38626d" class="outline-3">
+<h3 id="orgd38626d">Search Org files using lgrep</h3>
+<div class="outline-text-3" id="text-orgd38626d">
 <p>
 Matt Lundin suggests this:
 </p>
@@ -5138,9 +5138,9 @@ Matt Lundin suggests this:
 </div>
 </div>
 
-<div id="outline-container-org5182a6b" class="outline-3">
-<h3 id="org5182a6b">Automatic screenshot insertion</h3>
-<div class="outline-text-3" id="text-org5182a6b">
+<div id="outline-container-orge383213" class="outline-3">
+<h3 id="orge383213">Automatic screenshot insertion</h3>
+<div class="outline-text-3" id="text-orge383213">
 <p>
 Suggested by Russell Adams
 </p>
@@ -5164,9 +5164,9 @@ Suggested by Russell Adams
 </div>
 </div>
 
-<div id="outline-container-org36b4bfa" class="outline-3">
-<h3 id="org36b4bfa">Capture invitations/appointments from MS Exchange emails</h3>
-<div class="outline-text-3" id="text-org36b4bfa">
+<div id="outline-container-orgcfe85c9" class="outline-3">
+<h3 id="orgcfe85c9">Capture invitations/appointments from MS Exchange emails</h3>
+<div class="outline-text-3" id="text-orgcfe85c9">
 <p>
 Dirk-Jan C.Binnema <a href="http://article.gmane.org/gmane.emacs.orgmode/27684/">provided</a> code to do this.  Please check
 <a href="code/elisp/org-exchange-capture.el">org-exchange-capture.el</a>
@@ -5174,9 +5174,9 @@ Dirk-Jan C.Binnema <a href="http://article.gmane.org/gmane.emacs.orgmode/27684/"
 </div>
 </div>
 
-<div id="outline-container-org9252f91" class="outline-3">
-<h3 id="org9252f91">Audio/video file playback within org mode</h3>
-<div class="outline-text-3" id="text-org9252f91">
+<div id="outline-container-orgc315bd9" class="outline-3">
+<h3 id="orgc315bd9">Audio/video file playback within org mode</h3>
+<div class="outline-text-3" id="text-orgc315bd9">
 <p>
 Paul Sexton provided code that makes <code>file:</code> links to audio or video files
 (MP3, WAV, OGG, AVI, MPG, et cetera) play those files using the <a href="https://github.com/dbrock/bongo">Bongo</a> Emacs
@@ -5192,9 +5192,9 @@ See the file <a href="code/elisp/org-player.el">org-player.el</a>
 </div>
 </div>
 
-<div id="outline-container-orgb965297" class="outline-3">
-<h3 id="orgb965297">Under X11 Keep a window with the current agenda items at all time</h3>
-<div class="outline-text-3" id="text-orgb965297">
+<div id="outline-container-org234680c" class="outline-3">
+<h3 id="org234680c">Under X11 Keep a window with the current agenda items at all time</h3>
+<div class="outline-text-3" id="text-org234680c">
 <p>
 I struggle to keep (in emacs) a window with the agenda at all times.
 For a long time I have wanted a sticky window that keeps this
@@ -5238,9 +5238,9 @@ find if useful.
 </div>
 </div>
 
-<div id="outline-container-org4af2269" class="outline-3">
-<h3 id="org4af2269">Script (thru procmail) to output emails to an Org file</h3>
-<div class="outline-text-3" id="text-org4af2269">
+<div id="outline-container-org6a7a037" class="outline-3">
+<h3 id="org6a7a037">Script (thru procmail) to output emails to an Org file</h3>
+<div class="outline-text-3" id="text-org6a7a037">
 <p>
 Tycho Garen sent <a href="http://comments.gmane.org/gmane.emacs.orgmode/44773">this</a>:
 </p>
@@ -5258,8 +5258,8 @@ Everything is documented <a href="http://tychoish.com/code/org-mail/">here</a>.
 </div>
 </div>
 
-<div id="outline-container-org5efe864" class="outline-3">
-<h3 id="fileconversion"><a id="org5efe864"></a>Save File With Different Format for Headings (fileconversion)</h3>
+<div id="outline-container-org6da500c" class="outline-3">
+<h3 id="fileconversion"><a id="org6da500c"></a>Save File With Different Format for Headings (fileconversion)</h3>
 <div class="outline-text-3" id="text-fileconversion">
 <p>
 Using hooks and on the fly
@@ -5284,8 +5284,8 @@ whenever necessary.
 </p>
 </div>
 
-<div id="outline-container-org91c5a99" class="outline-4">
-<h4 id="hidestarsfile"><a id="org91c5a99"></a>Headings Without Leading Stars (hidestarsfile and nbspstarsfile)</h4>
+<div id="outline-container-org2b47197" class="outline-4">
+<h4 id="hidestarsfile"><a id="org2b47197"></a>Headings Without Leading Stars (hidestarsfile and nbspstarsfile)</h4>
 <div class="outline-text-4" id="text-hidestarsfile">
 <p>
 This is like "a cleaner outline view":
@@ -5348,8 +5348,8 @@ file is not converted back.</li>
 </div>
 </div>
 
-<div id="outline-container-org7c23178" class="outline-4">
-<h4 id="markdownstarsfile"><a id="org7c23178"></a>Headings in Markdown Format (markdownstarsfile)</h4>
+<div id="outline-container-org41ae11b" class="outline-4">
+<h4 id="markdownstarsfile"><a id="org41ae11b"></a>Headings in Markdown Format (markdownstarsfile)</h4>
 <div class="outline-text-4" id="text-markdownstarsfile">
 <p>
 Together with <code>oddeven</code> you can use <code>markdownstarsfile</code> to be readable
@@ -5383,8 +5383,8 @@ lines prefixed with <code>#</code>, even not when within source blocks.
 </div>
 </div>
 
-<div id="outline-container-orgc963576" class="outline-4">
-<h4 id="fileconversion-code"><a id="orgc963576"></a>emacs-lisp code</h4>
+<div id="outline-container-org033f837" class="outline-4">
+<h4 id="fileconversion-code"><a id="org033f837"></a>emacs-lisp code</h4>
 <div class="outline-text-4" id="text-fileconversion-code">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">- fileconversion version 0.10</span>
@@ -5565,9 +5565,9 @@ Michael Brand
 </div>
 </div>
 
-<div id="outline-container-orge07f23d" class="outline-3">
-<h3 id="orge07f23d">Meaningful diff for org files in a git repository</h3>
-<div class="outline-text-3" id="text-orge07f23d">
+<div id="outline-container-org9117bc5" class="outline-3">
+<h3 id="org9117bc5">Meaningful diff for org files in a git repository</h3>
+<div class="outline-text-3" id="text-org9117bc5">
 <p>
 Since most diff utilities are primarily meant for source code, it is
 difficult to read diffs of text files like <code>.org</code> files easily. If you
@@ -5632,9 +5632,9 @@ index a0672ea..92a08f7 100644
 </div>
 </div>
 
-<div id="outline-container-orgd071f74" class="outline-3">
-<h3 id="orgd071f74">Opening devonthink links</h3>
-<div class="outline-text-3" id="text-orgd071f74">
+<div id="outline-container-orgec1edbb" class="outline-3">
+<h3 id="orgec1edbb">Opening devonthink links</h3>
+<div class="outline-text-3" id="text-orgec1edbb">
 <p>
 John Wiegley wrote <a href="https://github.com/jwiegley/dot-emacs/blob/master/lisp/org-devonthink.el">org-devonthink.el</a>, which lets you handle devonthink
 links from org-mode.
@@ -5642,9 +5642,9 @@ links from org-mode.
 </div>
 </div>
 
-<div id="outline-container-org8e843fd" class="outline-3">
-<h3 id="org8e843fd">Memacs - Org-mode collecting meta-data from the disk and cloud</h3>
-<div class="outline-text-3" id="text-org8e843fd">
+<div id="outline-container-org23cfd88" class="outline-3">
+<h3 id="org23cfd88">Memacs - Org-mode collecting meta-data from the disk and cloud</h3>
+<div class="outline-text-3" id="text-org23cfd88">
 <p>
 Karl Voit designed Memacs (<a href="https://en.wikipedia.org/wiki/Memex">Memex</a> and Emacs) which is a collection of
 modules that are able to get meta-data from different kind of
@@ -5705,13 +5705,13 @@ module as well!
 </div>
 </div>
 
-<div id="outline-container-orgb4029a5" class="outline-2">
-<h2 id="orgb4029a5">Musings</h2>
-<div class="outline-text-2" id="text-orgb4029a5">
+<div id="outline-container-org0bb0f2d" class="outline-2">
+<h2 id="org0bb0f2d">Musings</h2>
+<div class="outline-text-2" id="text-org0bb0f2d">
 </div>
-<div id="outline-container-orgeca7488" class="outline-3">
-<h3 id="orgeca7488">Cooking?  Brewing?</h3>
-<div class="outline-text-3" id="text-orgeca7488">
+<div id="outline-container-orgab0c7f5" class="outline-3">
+<h3 id="orgab0c7f5">Cooking?  Brewing?</h3>
+<div class="outline-text-3" id="text-orgab0c7f5">
 <p>
 See <a href="http://article.gmane.org/gmane.emacs.orgmode/44981">this message</a> from Erik Hetzner:
 </p>
@@ -5747,7 +5747,7 @@ to calculate target original gravity, IBUs, etc.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Worg people</p>
-<p class="date">Created: 2020-02-25 Tue 15:46</p>
+<p class="date">Created: 2020-02-25 Tue 15:56</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
