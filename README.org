@@ -1,6 +1,6 @@
 #+TITLE:      Gruvbox-CSS
-#+HTML_HEAD:  <link rel="stylesheet" type="text/css" href="./css/gruvbox-dark-medium.min.css"/>
-#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:./test/built/org-info.min.js
+#+HTML_HEAD:  <link rel="stylesheet" type="text/css" href="http://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.min.css" />
+#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://a-dma.github.io/gruvbox-css/org-info.min.js
 
 * Gruvbox-CSS
 
@@ -32,15 +32,15 @@ different ways.
 Simply download and include the CSS file in your project. A public URL
 for the files is also available:
 
-- Regular CSS
-- Minified CSS
+- [[http://a-adma.github.io/gruvbox-css/gruvbox-dark-medium.css][Regular CSS]]
+- [[http://a-adma.github.io/gruvbox-css/gruvbox-dark-medium.min.css][Minified CSS]]
 
 *** Org
 
 For use with org-mode files add the following to the preamble
 
 #+BEGIN_SRC org
-  #+HTML_HEAD:  <link rel="stylesheet" type="text/css" href="./css/gruvbox-dark-medium.min.css"/>
+  #+HTML_HEAD:  <link rel="stylesheet" type="text/css" href="http://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.min.css" />
 #+END_SRC
 
 You can then export the file normally using the built-in HTML exporter
@@ -51,7 +51,7 @@ functionality used by this example you need to add also the following
 to your preamble
 
 #+BEGIN_SRC org
-  #+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:./test/built/org-info.min.js
+  #+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://a-dma.github.io/gruvbox-css/org-info.min.js
 #+END_SRC
 
 *** Markdown
@@ -59,7 +59,7 @@ to your preamble
 For Markdown add the following at the top of your file
 
 #+BEGIN_SRC markdown
-  <link href="./css/gruvbox-dark-medium.min.css" rel="stylesheet"></link>
+  <link href="http://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.min.css" rel="stylesheet"></link>
 #+END_SRC
 
 Then convert your file to HTML

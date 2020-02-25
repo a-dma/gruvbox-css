@@ -1,0 +1,56 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Emacs
+        uses: purcell/setup-emacs@master
+        with:
+          version: 26.3
+
+      - name: Create output directory
+        run: mkdir public
+
+      - name: Generate the minified CSS
+        run: make minify
+
+      - name: Copy the CSS files
+        run: cp css/*.css public
+
+      - name: Generate org-mode examples
+        run: |
+          emacs --batch -q --load publish.el --funcall toggle-debug-on-error -f publish-examples
+
+      - name: Rename index file
+        run: mv public/README.html public/index.html
+
+      - name: Generate Markdown example
+        uses: docker://pandoc/core:latest
+        with:
+          args: "--standalone --output=public/markdown.html examples/markdown.md"
+
+      - name: Copy the HTML examples
+        run: |
+          cp examples/*.html public
+          cp public/examples/*.html public
+          rm -rf public/examples
+
+      - name: Copy org-info.js
+        run: cp examples/org-info.min.js public
+
+      - name: Create CNAME file
+        run: echo "a-dma.github.io" >CNAME
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

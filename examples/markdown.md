@@ -1,4 +1,4 @@
-<link href="gruvbox-dark-medium.min.css" rel="stylesheet"></link>
+<link href="http://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.min.css" rel="stylesheet"></link>
 
 ---
 __Advertisement :)__
