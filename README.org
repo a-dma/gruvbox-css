@@ -32,8 +32,8 @@ different ways.
 Simply download and include the CSS file in your project. A public URL
 for the files is also available:
 
-- [[http://a-adma.github.io/gruvbox-css/gruvbox-dark-medium.css][Regular CSS]]
-- [[http://a-adma.github.io/gruvbox-css/gruvbox-dark-medium.min.css][Minified CSS]]
+- [[http://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.css][Regular CSS]]
+- [[http://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.min.css][Minified CSS]]
 
 *** Org
 
@@ -73,10 +73,10 @@ Then convert your file to HTML
 A few example pages using this theme can be found at this project's
 page or linked below.
 
-- [[http://a-adma.github.io/gruvbox-css/html.html][HTML test page]] (from [[https://snipplr.com/view/8121/html-test-page-for-css-style-guide][https://snipplr.com/view/8121/html-test-page-for-css-style-guide]])
-- [[http://a-adma.github.io/gruvbox-css/html2.html][HTML test page 2]] (from [[https://www.granneman.com/webdev/coding/htmlcsstestpage][https://www.granneman.com/webdev/coding/htmlcsstestpage]])
-- [[http://a-adma.github.io/gruvbox-css/org-hacks.html][Org-hacks]] (from [[https://orgmode.org/worg/sources/org-hacks.org][https://orgmode.org/worg/sources/org-hacks.org]])
-- [[http://a-adma.github.io/gruvbox-css/markdown.html][Markdown]] test page (from [[https://bitbucket.org/kevinburke/markdowncss/src/master/sample.html][https://bitbucket.org/kevinburke/markdowncss/src/master/sample.html]])
+- [[http://a-dma.github.io/gruvbox-css/html.html][HTML test page]] (from [[https://snipplr.com/view/8121/html-test-page-for-css-style-guide][https://snipplr.com/view/8121/html-test-page-for-css-style-guide]])
+- [[http://a-dma.github.io/gruvbox-css/html2.html][HTML test page 2]] (from [[https://www.granneman.com/webdev/coding/htmlcsstestpage][https://www.granneman.com/webdev/coding/htmlcsstestpage]])
+- [[http://a-dma.github.io/gruvbox-css/org-hacks.html][Org-hacks]] (from [[https://orgmode.org/worg/sources/org-hacks.org][https://orgmode.org/worg/sources/org-hacks.org]])
+- [[http://a-dma.github.io/gruvbox-css/markdown.html][Markdown]] test page (from [[https://bitbucket.org/kevinburke/markdowncss/src/master/sample.html][https://bitbucket.org/kevinburke/markdowncss/src/master/sample.html]])
 
 ** Acknowledgments
 
