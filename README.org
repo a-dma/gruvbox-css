@@ -10,7 +10,7 @@ I quite like the [[https://github.com/morhetz/gruvbox][Gruvbox theme]] and I wan
 pages with that look, hence this small project.
 
 Like ~solarized-css~ the most common HTML tags are supported. Org-mode
-and Markdown is also supported but mostly untested. You can see the
+and Markdown are also supported but mostly untested. You can see the
 results for yourself below.
 
 ** Build
@@ -58,7 +58,7 @@ to your preamble
 
 For Markdown add the following at the top of your file
 
-#+BEGIN_SRC markdown
+#+BEGIN_SRC html
   <link href="http://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.min.css" rel="stylesheet"></link>
 #+END_SRC
 
