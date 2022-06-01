@@ -8,8 +8,8 @@
 #+LANGUAGE:   en
 #+PRIORITIES: A C B
 #+CATEGORY:   worg
-#+HTML_HEAD:  <link rel="stylesheet" type="text/css" href="http://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.min.css"/>
-#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://a-dma.github.io/gruvbox-css/org-info.min.js
+#+HTML_HEAD:  <link rel="stylesheet" type="text/css" href="https://a-dma.github.io/gruvbox-css/gruvbox-dark-medium.min.css"/>
+#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:https://a-dma.github.io/gruvbox-css/org-info.min.js
 
 # This file is the default header for new Org files in Worg.  Feel free
 # to tailor it to your needs.
